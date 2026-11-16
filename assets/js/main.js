@@ -294,74 +294,77 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     
-    /* ==========================================
-       AUTOMATIC ACTIVE NAVIGATION
-    ========================================== */
+    
+/* ==========================================
+   AUTOMATIC ACTIVE NAVIGATION
+========================================== */
 
-    const currentPath = window.location.pathname
+// Normalize URLs so Netlify and VS Code work the same way
+function normalizePage(path) {
+    const url = new URL(path, window.location.href);
+
+    let page = url.pathname
         .toLowerCase()
-        .replace(/\/+$/, "");
+        .replace(/\/+$/, "")
+        .split("/")
+        .pop();
 
-   let currentPage = currentPath.split("/").pop() || "home1.html";
-
-// Fix Netlify extensionless URLs
-if (currentPage && !currentPage.includes(".")) {
-    currentPage += ".html";
+    return page.replace(/\.html$/, "") || "home1";
 }
 
-    const navLinks = document.querySelectorAll(
-        ".site-header .nav-links a"
+const currentPage = normalizePage(window.location.pathname);
+
+const navLinks = document.querySelectorAll(
+    ".site-header .nav-links a"
+);
+
+const homeDropdown = document.querySelector(
+    ".site-header .nav-home"
+);
+
+// Map detail pages to their parent navigation pages
+const pageMap = {
+    "blog-detail": "blog",
+    "service-details": "services"
+};
+
+const activePage = pageMap[currentPage] || currentPage;
+
+const isHomePage =
+    currentPage === "home1" ||
+    currentPage === "home2";
+
+// Clear previous active states
+navLinks.forEach(link => {
+    link.classList.remove("active", "selected");
+    link.removeAttribute("aria-current");
+});
+
+homeDropdown?.classList.remove("active");
+
+// Apply active states
+navLinks.forEach(link => {
+
+    const linkPage = normalizePage(
+        link.getAttribute("href")
     );
 
-    const homeDropdown = document.querySelector(
-        ".site-header .nav-home"
-    );
-
-    // Clear previous active states
-    navLinks.forEach(link => {
-        link.classList.remove("active", "selected");
-        link.removeAttribute("aria-current");
-    });
-
-    homeDropdown?.classList.remove("active");
-
-    // Pages that belong to another navigation item
-    const pageMap = {
-        "blog-detail.html": "blog.html",
-        "service-details.html": "services.html"
-    };
-
-    const activePage = pageMap[currentPage] || currentPage;
-
-    const isHomePage =
-        currentPage === "home1.html" ||
-        currentPage === "home2.html";
-
-    // Activate the correct navigation item
-    navLinks.forEach(link => {
-
-        const linkPath = new URL(
-            link.getAttribute("href"),
-            window.location.href
-        ).pathname.toLowerCase().replace(/\/+$/, "");
-
-        const linkPage = linkPath.split("/").pop();
-
-        if (linkPage === activePage) {
-            link.classList.add("active");
-            link.setAttribute("aria-current", "page");
-        }
-
-        // Highlight the correct Home dropdown option
-        if (isHomePage && linkPage === currentPage) {
-            link.classList.add("selected");
-        }
-    });
-
-    // Keep Home highlighted on both Home Classic and Home Premium
-    if (isHomePage) {
-        homeDropdown?.classList.add("active");
+    // Home Classic / Home Premium
+    if (isHomePage && linkPage === currentPage) {
+        link.classList.add("selected");
     }
+
+    // Other navigation pages
+    if (!isHomePage && linkPage === activePage) {
+        link.classList.add("active");
+        link.setAttribute("aria-current", "page");
+    }
+});
+
+// Keep Home highlighted on both home pages
+if (isHomePage) {
+    homeDropdown?.classList.add("active");
+}
 
     /* ==========================================
        GLOBAL WEBSITE SCROLL ANIMATIONS
