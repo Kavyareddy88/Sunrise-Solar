@@ -302,7 +302,12 @@ document.addEventListener("DOMContentLoaded", function () {
         .toLowerCase()
         .replace(/\/+$/, "");
 
-    const currentPage = currentPath.split("/").pop() || "home1.html";
+   let currentPage = currentPath.split("/").pop() || "home1.html";
+
+// Fix Netlify extensionless URLs
+if (currentPage && !currentPage.includes(".")) {
+    currentPage += ".html";
+}
 
     const navLinks = document.querySelectorAll(
         ".site-header .nav-links a"
