@@ -293,14 +293,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
+    
     /* ==========================================
        AUTOMATIC ACTIVE NAVIGATION
     ========================================== */
 
-    const currentPage = window.location.pathname
-        .split("/")
-        .pop()
-        .toLowerCase();
+    const currentPath = window.location.pathname
+        .toLowerCase()
+        .replace(/\/+$/, "");
+
+    const currentPage = currentPath.split("/").pop() || "home1.html";
 
     const navLinks = document.querySelectorAll(
         ".site-header .nav-links a"
@@ -310,16 +312,15 @@ document.addEventListener("DOMContentLoaded", function () {
         ".site-header .nav-home"
     );
 
-    // Remove existing active states
-    navLinks.forEach(function (link) {
-
+    // Clear previous active states
+    navLinks.forEach(link => {
         link.classList.remove("active", "selected");
-
+        link.removeAttribute("aria-current");
     });
 
     homeDropdown?.classList.remove("active");
 
-    // Map detail pages to their parent navigation pages
+    // Pages that belong to another navigation item
     const pageMap = {
         "blog-detail.html": "blog.html",
         "service-details.html": "services.html"
@@ -327,35 +328,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const activePage = pageMap[currentPage] || currentPage;
 
-    // Apply active navigation state
-    navLinks.forEach(function (link) {
+    const isHomePage =
+        currentPage === "home1.html" ||
+        currentPage === "home2.html";
 
-        const linkPage = link.getAttribute("href")
-            ?.split("/")
-            .pop()
-            .toLowerCase();
+    // Activate the correct navigation item
+    navLinks.forEach(link => {
+
+        const linkPath = new URL(
+            link.getAttribute("href"),
+            window.location.href
+        ).pathname.toLowerCase().replace(/\/+$/, "");
+
+        const linkPage = linkPath.split("/").pop();
 
         if (linkPage === activePage) {
             link.classList.add("active");
+            link.setAttribute("aria-current", "page");
         }
 
-        // Home dropdown active state
-        if (
-            currentPage === "home1.html" ||
-            currentPage === "home2.html"
-        ) {
-
-            if (linkPage === currentPage) {
-
-                link.classList.add("selected");
-                homeDropdown?.classList.add("active");
-
-            }
-
+        // Highlight the correct Home dropdown option
+        if (isHomePage && linkPage === currentPage) {
+            link.classList.add("selected");
         }
-
     });
 
+    // Keep Home highlighted on both Home Classic and Home Premium
+    if (isHomePage) {
+        homeDropdown?.classList.add("active");
+    }
 
     /* ==========================================
        GLOBAL WEBSITE SCROLL ANIMATIONS
