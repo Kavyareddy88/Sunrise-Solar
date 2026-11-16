@@ -2846,11 +2846,15 @@ body.dark-theme .sunrise-hero__features span {
 .sunrise-hero__btn:hover svg {
     transform: translateX(4px);
 }
+
+/* HOME PREMIUM – ALIGN HERO WITH LOGO */
+
 @media (min-width: 769px) {
     .sunrise-hero__content {
-        margin-left: 65px;
+        margin-left: 0 !important;
     }
 }
+
 @media (min-width: 769px) {
     .sunrise-hero__bottom {
         padding-left: 65px;
