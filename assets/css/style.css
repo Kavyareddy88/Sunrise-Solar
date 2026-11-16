@@ -3468,3 +3468,47 @@ body.dark-theme .footer .footer-social a:hover {
         gap: 12px !important;
     }
 }
+
+/* =====================================================
+   SUNRISE SOLAR – GLOBAL WEBSITE ALIGNMENT
+   Consistent left and right spacing across ALL pages
+   Desktop: 100% browser zoom
+===================================================== */
+
+@media (min-width: 1201px) {
+
+    :root {
+        --global-page-gutter: clamp(28px, 8.2vw, 158px);
+    }
+
+    /* Header – logo to Book Now */
+    .site-header > .container.nav-wrap,
+    .topbar > .container {
+        width: calc(100% - (2 * var(--global-page-gutter))) !important;
+        max-width: none !important;
+        margin-inline: auto !important;
+        padding-inline: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* All main page sections */
+    main > section > .container,
+    main > section > .sp-container,
+    main > section > .sunrise-hero__container {
+        width: calc(100% - (2 * var(--global-page-gutter))) !important;
+        max-width: none !important;
+        margin-inline: auto !important;
+        padding-inline: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Footer alignment */
+    footer .container {
+        width: calc(100% - (2 * var(--global-page-gutter))) !important;
+        max-width: none !important;
+        margin-inline: auto !important;
+        padding-inline: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+}
