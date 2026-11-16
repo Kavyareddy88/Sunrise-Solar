@@ -1,0 +1,474 @@
+
+/* ==========================================
+   SUNRISE SOLAR – SERVICE DETAILS PAGE
+========================================== */
+
+.service-detail-page {
+    --detail-gutter: clamp(28px, 8.2vw, 158px);
+    --detail-heading-size: clamp(30px, 3.5vw, 42px);
+
+    width: 100%;
+    overflow: hidden;
+}
+
+.service-detail-page .container {
+    width: calc(100% - (2 * var(--detail-gutter))) !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+    padding-inline: 0 !important;
+    box-sizing: border-box !important;
+}
+
+@media (max-width: 1000px) {
+    .service-detail-page {
+        --detail-gutter: 32px;
+    }
+}
+
+@media (max-width: 700px) {
+    .service-detail-page {
+        --detail-gutter: 18px;
+    }
+}
+
+@media (max-width: 380px) {
+    .service-detail-page {
+        --detail-gutter: 14px;
+    }
+}
+
+
+/* ==========================================
+   COMMON HEADINGS
+========================================== */
+
+.service-detail-page .services-kicker {
+    display: block;
+    margin-bottom: 14px;
+
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.service-detail-page h2 {
+    color: var(--ink);
+    font-size: var(--detail-heading-size);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.service-detail-page h2 span {
+    color: var(--secondary);
+}
+
+
+/* ==========================================
+   DETAIL PAGE HERO
+========================================== */
+
+.detail-hero {
+    display: flex;
+    align-items: center;
+
+    min-height: 390px;
+    padding-block: 65px;
+
+    background: var(--cream);
+}
+
+.detail-hero .container {
+    max-width: 850px;
+}
+
+.detail-hero h1 {
+    margin: 0 0 18px;
+
+    color: var(--ink);
+    font-size: clamp(36px, 4.5vw, 54px);
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.detail-hero h1 span {
+    color: var(--secondary);
+}
+
+.detail-hero p {
+    max-width: 700px;
+    margin: 0 0 25px;
+
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   INDIVIDUAL SERVICE SECTIONS
+========================================== */
+
+.service-detail-section {
+    padding-block: 80px;
+    background: var(--paper);
+
+    scroll-margin-top: 110px;
+}
+
+.service-detail-section:nth-of-type(even) {
+    background: var(--cream);
+}
+
+.detail-layout {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.detail-image {
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+
+    border-radius: 12px;
+    background: var(--cream);
+}
+
+.detail-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.detail-image:hover img {
+    transform: scale(1.045);
+}
+
+.detail-content {
+    min-width: 0;
+}
+
+.detail-content h2 {
+    margin: 0 0 18px;
+}
+
+.detail-content > p {
+    margin: 0 0 22px;
+
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+.detail-content h3 {
+    margin: 0 0 13px;
+
+    color: var(--ink);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.detail-content ul {
+    display: grid;
+    gap: 11px;
+
+    margin: 0 0 26px;
+    padding-inline-start: 20px;
+
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.detail-content li::marker {
+    color: var(--secondary);
+}
+
+
+/* ==========================================
+   BUTTONS
+   SAME SIZE AS HOME 1
+========================================== */
+
+.service-detail-page .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+    padding: 13px 23px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.service-detail-page .btn-primary {
+    background: var(--primary);
+    color: #FFFFFF;
+    border: 1.5px solid var(--primary);
+}
+
+.service-detail-page .btn-primary:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.service-detail-page .btn-secondary {
+    background: transparent;
+    color: #FFFFFF;
+    border: 1.5px solid var(--secondary);
+}
+
+.service-detail-page .btn-secondary:hover {
+    background: var(--secondary);
+    color: var(--primary-dark);
+}
+
+
+/* ==========================================
+   DETAIL PAGE CTA
+========================================== */
+
+.detail-cta {
+    padding-block: 40px;
+    background: var(--primary-dark);
+}
+
+.detail-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.detail-cta-inner > div {
+    max-width: 760px;
+}
+
+.detail-cta-label {
+    display: block;
+    margin-bottom: 9px;
+
+    color: var(--secondary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+}
+
+.detail-cta h2 {
+    margin: 0 0 10px;
+
+    color: #FFFFFF;
+    font-size: clamp(25px, 3vw, 34px);
+    line-height: 1.25;
+}
+
+.detail-cta h2 span {
+    color: var(--secondary);
+}
+
+.detail-cta p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.detail-cta .btn {
+    flex-shrink: 0;
+}
+
+
+/* ==========================================
+   DARK THEME
+========================================== */
+
+body.dark-theme .detail-hero {
+    background: var(--cream);
+}
+
+body.dark-theme .service-detail-section {
+    background: var(--paper);
+}
+
+body.dark-theme .service-detail-section:nth-of-type(even) {
+    background: var(--cream);
+}
+
+body.dark-theme .service-detail-page .services-kicker {
+    color: var(--secondary);
+}
+
+body.dark-theme .detail-hero h1,
+body.dark-theme .detail-content h2,
+body.dark-theme .detail-content h3 {
+    color: var(--ink);
+}
+
+body.dark-theme .detail-hero h1 span,
+body.dark-theme .detail-content h2 span {
+    color: var(--secondary);
+}
+
+body.dark-theme .detail-hero p,
+body.dark-theme .detail-content > p,
+body.dark-theme .detail-content ul {
+    color: var(--muted);
+}
+
+body.dark-theme .detail-image {
+    background: var(--paper);
+}
+
+body.dark-theme .detail-image img {
+    filter: brightness(0.86) saturate(0.88);
+}
+
+body.dark-theme .detail-image:hover img {
+    filter: brightness(0.72) saturate(0.95);
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .detail-layout {
+        gap: 32px;
+    }
+
+    .detail-image {
+        height: 360px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+
+    .detail-hero {
+        min-height: auto;
+        padding-block: 55px;
+    }
+
+    .detail-hero h1 {
+        font-size: clamp(32px, 8vw, 42px);
+    }
+
+    .service-detail-section {
+        padding-block: 55px;
+    }
+
+    .detail-layout {
+        grid-template-columns: 1fr;
+        gap: 27px;
+    }
+
+    .detail-image {
+        height: 260px;
+    }
+
+    .detail-content h2 {
+        font-size: clamp(28px, 7vw, 34px);
+    }
+
+    .detail-cta {
+        padding-block: 35px;
+    }
+
+    .detail-cta-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .detail-image {
+        height: 225px;
+    }
+
+}
+
+
+/* ==========================================
+   RTL SUPPORT
+========================================== */
+
+[dir="rtl"] .detail-content ul {
+    padding-inline-start: 0;
+    padding-inline-end: 20px;
+}
+
+[dir="rtl"] .detail-layout {
+    direction: rtl;
+}
+/* ==========================================
+   BLOG DETAIL & SERVICE DETAIL
+   MATCH EXISTING WEBSITE HEADING COLOURS
+========================================== */
+
+/* LIGHT MODE */
+.solar-detail-page h1,
+.solar-detail-page h2,
+.solar-detail-page h3,
+.service-detail-page h1,
+.service-detail-page h2,
+.service-detail-page h3 {
+    color: #183027 !important;
+}
+
+.solar-detail-page h1 em,
+.solar-detail-page h2 em,
+.solar-detail-page h3 em,
+.service-detail-page h1 em,
+.service-detail-page h2 em,
+.service-detail-page h3 em {
+    color: #E8B94F !important;
+    font-style: normal;
+}
+
+/* DARK MODE */
+body.dark-theme .solar-detail-page h1,
+body.dark-theme .solar-detail-page h2,
+body.dark-theme .solar-detail-page h3,
+body.dark-theme .service-detail-page h1,
+body.dark-theme .service-detail-page h2,
+body.dark-theme .service-detail-page h3 {
+    color: #EDF4EE !important;
+}
+
+body.dark-theme .solar-detail-page h1 em,
+body.dark-theme .solar-detail-page h2 em,
+body.dark-theme .solar-detail-page h3 em,
+body.dark-theme .service-detail-page h1 em,
+body.dark-theme .service-detail-page h2 em,
+body.dark-theme .service-detail-page h3 em {
+    color: #E8B94F !important;
+    font-style: normal;
+}

@@ -1,0 +1,1326 @@
+
+/* ==========================================
+   SUNRISE SOLAR – SAVINGS CALCULATOR
+========================================== */
+
+.calculator-page {
+    --calculator-gutter: clamp(28px, 8.2vw, 158px);
+    --calculator-heading-size: clamp(30px, 3.5vw, 42px);
+
+    width: 100%;
+    overflow: hidden;
+}
+
+.calculator-page .container {
+    width: calc(100% - (2 * var(--calculator-gutter))) !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+    padding-inline: 0 !important;
+    box-sizing: border-box !important;
+}
+
+@media (max-width: 1000px) {
+    .calculator-page {
+        --calculator-gutter: 32px;
+    }
+}
+
+@media (max-width: 700px) {
+    .calculator-page {
+        --calculator-gutter: 18px;
+    }
+}
+
+@media (max-width: 380px) {
+    .calculator-page {
+        --calculator-gutter: 14px;
+    }
+}
+
+
+/* ==========================================
+   COMMON HEADINGS
+========================================== */
+
+.calculator-kicker {
+    display: block;
+    margin-bottom: 15px;
+
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.calculator-section-heading {
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.calculator-section-heading h2 {
+    margin: 0 0 16px;
+
+    color: var(--ink);
+    font-size: var(--calculator-heading-size);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.calculator-section-heading h2 span {
+    color: var(--secondary);
+}
+
+.calculator-section-heading p {
+    max-width: 700px;
+    margin: 0 auto;
+
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   BUTTONS – MATCH HOME 1
+========================================== */
+
+.calculator-page .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-height: 48px;
+    padding: 13px 23px;
+
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.calculator-page .btn-primary {
+    background: var(--primary);
+    color: #FFFFFF;
+    border: 1.5px solid var(--primary);
+}
+
+.calculator-page .btn-primary:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.calculator-page .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--secondary);
+}
+
+.calculator-page .btn-secondary:hover {
+    background: var(--secondary);
+    color: var(--primary-dark);
+    border-color: var(--secondary);
+}
+
+.calculator-page .btn-arrow {
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+.calculator-page .btn:hover .btn-arrow {
+    transform: translateX(4px);
+}
+
+[dir="rtl"] .calculator-page .btn:hover .btn-arrow {
+    transform: translateX(-4px);
+}
+
+
+/* ==========================================
+   SECTION 1 – HERO
+========================================== */
+
+.calculator-hero {
+    min-height: calc(100svh - 94px);
+    display: flex;
+    align-items: center;
+
+    padding-block: 30px;
+    background: var(--cream);
+    box-sizing: border-box;
+}
+
+.calculator-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.calculator-hero-content {
+    min-width: 0;
+}
+
+.calculator-hero-content h1 {
+    max-width: 620px;
+    margin: 0 0 20px;
+
+    color: var(--ink);
+    font-size: clamp(40px, 4.5vw, 58px);
+    font-weight: 700;
+    line-height: 1.13;
+}
+
+.calculator-hero-content h1 span {
+    color: var(--secondary);
+}
+
+.calculator-hero-content > p {
+    max-width: 560px;
+    margin: 0 0 28px;
+
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+.calculator-hero-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.calculator-hero-image {
+    width: 100%;
+    height: min(68vh, 560px);
+    min-height: 390px;
+
+    overflow: hidden;
+    border-radius: 12px;
+    background: var(--paper);
+}
+
+.calculator-hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.65s ease, filter 0.65s ease;
+}
+
+.calculator-hero-image:hover img {
+    transform: scale(1.045);
+}
+
+body.dark-theme .calculator-hero-image img {
+    filter: brightness(0.82) saturate(0.85);
+}
+
+body.dark-theme .calculator-hero-image:hover img {
+    filter: brightness(0.7) saturate(0.95);
+}
+
+
+/* ==========================================
+   SECTION 2 – CALCULATOR
+========================================== */
+
+.calculator-tool-section {
+    padding-block: 85px;
+    background: var(--paper);
+}
+
+.calculator-tool-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.calculator-tool-copy h3 {
+    margin: 0 0 17px;
+
+    color: var(--ink);
+    font-size: 25px;
+    line-height: 1.35;
+}
+
+.calculator-tool-copy > p {
+    margin: 0 0 25px;
+
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+.calculator-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+
+    padding: 18px;
+
+    background: var(--cream);
+    border-inline-start: 3px solid var(--secondary);
+    border-radius: 7px;
+}
+
+.calculator-note svg {
+    flex-shrink: 0;
+    color: var(--primary);
+}
+
+.calculator-note p {
+    margin: 0;
+
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.calculator-box {
+    padding: 32px;
+
+    background: var(--cream);
+    border: 1px solid rgba(23, 107, 75, 0.15);
+    border-radius: 12px;
+}
+
+.calculator-box > h3 {
+    margin: 0 0 8px;
+
+    color: var(--ink);
+    font-size: 23px;
+}
+
+.calculator-box-intro {
+    margin: 0 0 25px;
+
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.calculator-field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+
+    margin-bottom: 20px;
+}
+
+.calculator-field label {
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.bill-input-wrap {
+    display: flex;
+    align-items: center;
+
+    min-height: 50px;
+    padding-inline: 15px;
+
+    background: var(--paper);
+    border: 1px solid rgba(23, 107, 75, 0.22);
+    border-radius: 6px;
+}
+
+.currency-symbol {
+    color: var(--primary);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.bill-input-wrap input {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+
+    padding: 0 10px;
+
+    background: transparent;
+    border: 0;
+    outline: 0;
+
+    color: var(--ink);
+    font: inherit;
+    font-size: 14px;
+}
+
+.calculator-field select {
+    width: 100%;
+    min-height: 50px;
+    padding: 0 14px;
+
+    background: var(--paper);
+    border: 1px solid rgba(23, 107, 75, 0.22);
+    border-radius: 6px;
+
+    color: var(--ink);
+    font: inherit;
+    font-size: 14px;
+}
+
+.calculator-field input:focus,
+.calculator-field select:focus {
+    outline: 2px solid var(--secondary);
+    outline-offset: 2px;
+}
+
+.calculator-submit {
+    width: 100%;
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   CALCULATOR RESULTS
+========================================== */
+
+.calculator-results {
+    margin-top: 25px;
+    padding: 23px;
+
+    background: var(--paper);
+    border: 1px solid rgba(23, 107, 75, 0.16);
+    border-radius: 9px;
+}
+
+.calculator-results[hidden] {
+    display: none;
+}
+
+.results-label {
+    display: block;
+    margin-bottom: 17px;
+
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.result-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding-block: 13px;
+    border-bottom: 1px solid rgba(23, 107, 75, 0.13);
+}
+
+.result-item span {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.result-item strong {
+    color: var(--primary);
+    font-size: 22px;
+    font-weight: 700;
+    text-align: end;
+}
+
+.result-disclaimer {
+    margin: 17px 0 0;
+
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   SECTION 3 – HOW SAVINGS WORK
+========================================== */
+
+.calculator-how-section {
+    padding-block: 85px;
+    background: var(--cream);
+}
+
+.calculator-how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.calculator-info-card {
+    padding: 30px 25px;
+
+    background: var(--paper);
+    border: 1px solid rgba(23, 107, 75, 0.14);
+    border-radius: 10px;
+
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.calculator-info-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary);
+}
+
+.info-number {
+    display: inline-block;
+    margin-bottom: 22px;
+
+    color: var(--secondary);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.calculator-info-card h3 {
+    margin: 0 0 13px;
+
+    color: var(--ink);
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.calculator-info-card p {
+    margin: 0;
+
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   SECTION 4 – BENEFITS
+========================================== */
+
+.calculator-benefits-section {
+    padding-block: 85px;
+    background: var(--paper);
+}
+
+.calculator-benefits-grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.calculator-benefits-image {
+    height: 520px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.calculator-benefits-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.calculator-benefits-image:hover img {
+    transform: scale(1.04);
+}
+
+.calculator-benefits-content h2 {
+    margin: 0 0 18px;
+
+    color: var(--ink);
+    font-size: var(--calculator-heading-size);
+    line-height: 1.2;
+}
+
+.calculator-benefits-content h2 span {
+    color: var(--secondary);
+}
+
+.calculator-benefits-content > p {
+    margin: 0 0 26px;
+
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.calculator-benefit-list {
+    display: grid;
+    gap: 20px;
+}
+
+.calculator-benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.benefit-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 42px;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+    background: rgba(232, 185, 79, 0.17);
+
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.calculator-benefit-item h3 {
+    margin: 0 0 6px;
+
+    color: var(--ink);
+    font-size: 16px;
+}
+
+.calculator-benefit-item p {
+    margin: 0;
+
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   SECTION 5 – FACTORS
+========================================== */
+
+.calculator-factors-section {
+    padding-block: 85px;
+    background: var(--cream);
+}
+
+.calculator-factors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.factor-card {
+    padding: 27px;
+
+    background: var(--paper);
+    border: 1px solid rgba(23, 107, 75, 0.14);
+    border-radius: 10px;
+
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.factor-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--secondary);
+}
+
+.factor-card h3 {
+    margin: 0 0 10px;
+
+    color: var(--ink);
+    font-size: 18px;
+}
+
+.factor-card p {
+    margin: 0;
+
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   FAQ
+========================================== */
+
+.calculator-faq-section {
+    padding-block: 85px;
+    background: var(--paper);
+}
+
+.calculator-faq-list {
+    max-width: 900px;
+    margin-inline: auto;
+}
+
+.calculator-faq-item {
+    margin-bottom: 13px;
+    padding-inline: 22px;
+
+    background: var(--cream);
+    border: 1px solid rgba(23, 107, 75, 0.14);
+    border-radius: 9px;
+}
+
+.calculator-faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    min-height: 66px;
+
+    color: var(--ink);
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+    list-style: none;
+}
+
+.calculator-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-toggle {
+    position: relative;
+    flex: 0 0 22px;
+
+    width: 22px;
+    height: 22px;
+
+    border: 1.5px solid var(--secondary);
+    border-radius: 50%;
+}
+
+.faq-toggle::before,
+.faq-toggle::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 9px;
+    height: 1.5px;
+
+    background: var(--primary);
+    transform: translate(-50%, -50%);
+}
+
+.faq-toggle::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+    transition: transform 0.2s ease;
+}
+
+.calculator-faq-item[open] .faq-toggle::after {
+    transform: translate(-50%, -50%);
+}
+
+.calculator-faq-item > p {
+    margin: 0;
+    padding: 0 0 20px;
+
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   CTA – PRIMARY GREEN
+========================================== */
+
+.calculator-cta {
+    padding-block: 38px;
+    background: var(--primary);
+}
+
+.calculator-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.calculator-cta-copy {
+    max-width: 760px;
+}
+
+.calculator-cta-label {
+    display: block;
+    margin-bottom: 9px;
+
+    color: var(--secondary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+}
+
+.calculator-cta h2 {
+    margin: 0 0 10px;
+
+    color: #FFFFFF;
+    font-size: clamp(25px, 3vw, 34px);
+    line-height: 1.25;
+}
+
+.calculator-cta h2 span {
+    color: var(--secondary);
+}
+
+.calculator-cta p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.calculator-cta .btn-secondary {
+    flex-shrink: 0;
+    color: #FFFFFF;
+    border-color: var(--secondary);
+}
+
+
+/* ==========================================
+   DARK THEME
+========================================== */
+
+body.dark-theme .calculator-tool-section,
+body.dark-theme .calculator-benefits-section,
+body.dark-theme .calculator-faq-section {
+    background: var(--paper);
+}
+
+body.dark-theme .calculator-hero,
+body.dark-theme .calculator-how-section,
+body.dark-theme .calculator-factors-section {
+    background: var(--cream);
+}
+
+body.dark-theme .calculator-page .calculator-kicker {
+    color: var(--secondary);
+}
+
+body.dark-theme .calculator-hero-content h1,
+body.dark-theme .calculator-section-heading h2,
+body.dark-theme .calculator-benefits-content h2 {
+    color: var(--ink);
+}
+
+body.dark-theme .calculator-hero-content h1 span,
+body.dark-theme .calculator-section-heading h2 span,
+body.dark-theme .calculator-benefits-content h2 span {
+    color: var(--secondary);
+}
+
+body.dark-theme .calculator-hero-content > p,
+body.dark-theme .calculator-section-heading p,
+body.dark-theme .calculator-tool-copy > p,
+body.dark-theme .calculator-benefits-content > p {
+    color: var(--muted);
+}
+
+body.dark-theme .calculator-box,
+body.dark-theme .calculator-info-card,
+body.dark-theme .factor-card {
+    background: var(--cream);
+    border-color: rgba(232, 185, 79, 0.18);
+}
+
+body.dark-theme .calculator-box h3,
+body.dark-theme .calculator-tool-copy h3,
+body.dark-theme .calculator-info-card h3,
+body.dark-theme .factor-card h3,
+body.dark-theme .calculator-benefit-item h3 {
+    color: var(--ink);
+}
+
+body.dark-theme .calculator-note {
+    background: var(--paper);
+}
+
+body.dark-theme .calculator-note svg,
+body.dark-theme .benefit-check {
+    color: var(--secondary);
+}
+
+body.dark-theme .bill-input-wrap,
+body.dark-theme .calculator-field select,
+body.dark-theme .calculator-results {
+    background: var(--paper);
+    border-color: rgba(232, 185, 79, 0.2);
+}
+
+body.dark-theme .calculator-field label,
+body.dark-theme .bill-input-wrap input,
+body.dark-theme .calculator-field select {
+    color: var(--ink);
+}
+
+body.dark-theme .result-item strong {
+    color: var(--secondary);
+}
+
+body.dark-theme .results-label {
+    color: var(--secondary);
+}
+
+body.dark-theme .calculator-benefit-item p,
+body.dark-theme .calculator-info-card p,
+body.dark-theme .factor-card p,
+body.dark-theme .calculator-faq-item > p {
+    color: var(--muted);
+}
+
+body.dark-theme .calculator-faq-item {
+    background: var(--cream);
+    border-color: rgba(232, 185, 79, 0.18);
+}
+
+body.dark-theme .calculator-faq-item summary {
+    color: var(--ink);
+}
+
+body.dark-theme .faq-toggle::before,
+body.dark-theme .faq-toggle::after {
+    background: var(--secondary);
+}
+
+body.dark-theme .calculator-benefits-image img {
+    filter: brightness(0.86) saturate(0.88);
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .calculator-hero-grid {
+        gap: 32px;
+    }
+
+    .calculator-tool-grid {
+        gap: 35px;
+    }
+
+    .calculator-benefits-grid {
+        gap: 35px;
+    }
+
+    .calculator-how-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+
+    .calculator-hero {
+        min-height: auto;
+        padding-block: 45px;
+    }
+
+    .calculator-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .calculator-hero-content h1 {
+        font-size: clamp(36px, 9vw, 48px);
+    }
+
+    .calculator-hero-content > p {
+        font-size: 14px;
+    }
+
+    .calculator-hero-image {
+        height: 300px;
+        min-height: 0;
+    }
+
+    .calculator-hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+        max-width: 280px;
+    }
+
+    .calculator-hero-buttons .btn {
+        width: 100%;
+    }
+
+    .calculator-tool-section,
+    .calculator-how-section,
+    .calculator-benefits-section,
+    .calculator-factors-section,
+    .calculator-faq-section {
+        padding-block: 55px;
+    }
+
+    .calculator-section-heading {
+        margin-bottom: 32px;
+    }
+
+    .calculator-section-heading p {
+        font-size: 14px;
+    }
+
+    .calculator-tool-grid,
+    .calculator-benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .calculator-box {
+        padding: 23px 19px;
+    }
+
+    .calculator-how-grid,
+    .calculator-factors-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .calculator-benefits-image {
+        height: 290px;
+    }
+
+    .calculator-cta {
+        padding-block: 34px;
+    }
+
+    .calculator-cta-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .calculator-faq-item {
+        padding-inline: 16px;
+    }
+
+    .calculator-faq-item summary {
+        min-height: 62px;
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .calculator-hero-content h1 {
+        font-size: 34px;
+    }
+
+    .calculator-hero-image {
+        height: 245px;
+    }
+
+    .calculator-box {
+        padding: 20px 15px;
+    }
+
+}
+
+
+/* ==========================================
+   RTL SUPPORT
+========================================== */
+
+[dir="rtl"] .calculator-hero-grid,
+[dir="rtl"] .calculator-tool-grid,
+[dir="rtl"] .calculator-benefits-grid {
+    direction: rtl;
+}
+
+[dir="rtl"] .calculator-hero-buttons {
+    direction: rtl;
+}
+
+[dir="rtl"] .calculator-note {
+    border-inline-start: 0;
+    border-inline-end: 3px solid var(--secondary);
+}
+
+[dir="rtl"] .calculator-faq-item summary {
+    text-align: right;
+}
+
+[dir="rtl"] .calculator-cta-inner {
+    direction: rtl;
+}
+
+[dir="rtl"] .result-item {
+    direction: rtl;
+}
+
+@media (max-width: 700px) {
+    [dir="rtl"] .calculator-hero-grid {
+        direction: rtl;
+    }
+}
+
+/* ==========================================
+   CALCULATOR PAGE ANIMATIONS
+========================================== */
+
+/* Scroll reveal initial state */
+
+.calculator-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+/* Visible state */
+
+.calculator-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Hero image entrance */
+
+.calculator-hero-image {
+    opacity: 0;
+    transform: translateX(25px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.calculator-hero-image.calculator-hero-image-ready {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Calculator result entrance */
+
+.calculator-results {
+    opacity: 0;
+    transform: translateY(12px);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+.calculator-results.result-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Card hover animation */
+
+.calculator-info-card,
+.factor-card {
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.calculator-info-card:hover,
+.factor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(23, 107, 75, 0.08);
+}
+
+
+/* Image hover */
+
+.calculator-hero-image img,
+.calculator-benefits-image img {
+    transition: transform 0.6s ease;
+}
+
+.calculator-hero-image:hover img,
+.calculator-benefits-image:hover img {
+    transform: scale(1.045);
+}
+
+
+/* FAQ animation */
+
+.calculator-faq-item summary {
+    transition: color 0.25s ease;
+}
+
+.calculator-faq-item summary:hover {
+    color: var(--primary);
+}
+
+body.dark-theme .calculator-faq-item summary:hover {
+    color: var(--secondary);
+}
+
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .calculator-page *,
+    .calculator-page *::before,
+    .calculator-page *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .calculator-reveal,
+    .calculator-hero-image {
+        opacity: 1;
+        transform: none;
+    }
+
+}
+
+/* FIX: Keep calculator hero image visible */
+
+.calculator-page .calculator-hero-image {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+
+.calculator-page .calculator-hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 390px;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 700px) {
+    .calculator-page .calculator-hero-image img {
+        min-height: 0;
+    }
+}
+/* =========================================
+   CALCULATOR CTA – HEADING AND BUTTON
+========================================= */
+
+/* Heading in primary color */
+.calculator-cta-copy h2 {
+    color: var(--primary-color);
+}
+
+/* Keep the second line consistent */
+.calculator-cta-copy h2 span {
+    color: inherit;
+}
+
+/* Primary button styling */
+.calculator-cta .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Arrow alignment and hover */
+.calculator-cta .btn-arrow {
+    display: block;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.calculator-cta .btn-primary:hover .btn-arrow {
+    transform: translateX(3px);
+}
+
+/* Dark mode heading */
+body.dark-mode .calculator-cta-copy h2 {
+    color: #ffffff;
+}
+
+/* RTL arrow direction */
+[dir="rtl"] .calculator-cta .btn-arrow {
+    transform: scaleX(-1);
+}
+
+[dir="rtl"] .calculator-cta .btn-primary:hover .btn-arrow {
+    transform: scaleX(-1) translateX(3px);
+}
+/* =========================================
+   CALCULATOR CTA – SECONDARY COLOR PANEL
+========================================= */
+
+.calculator-cta {
+    background: transparent !important;
+    padding: 55px 0 !important;
+}
+
+.calculator-cta .calculator-cta-inner {
+    background: var(--secondary-color, var(--secondary, #efbd4f)) !important;
+    border-radius: 10px;
+    padding: 65px 70px !important;
+    width: min( calc(100% - 40px), 1370px);
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .calculator-cta .calculator-cta-inner {
+        padding: 35px 25px !important;
+    }
+}
+/* CTA label – green color */
+.calculator-cta-label {
+    color: var(--primary-color, #176b4b) !important;
+}
+/* =========================================
+   CALCULATOR FAQ – QUESTION HOVER
+========================================= */
+
+.calculator-faq-item summary {
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.calculator-faq-item summary:hover {
+    color: #E8B94F !important;
+}
+
+/* Keep the question gold when opened */
+.calculator-faq-item[open] summary {
+    color: #E8B94F !important;
+}
+
+/* FAQ toggle icon hover */
+.calculator-faq-item summary:hover .faq-toggle {
+    border-color: #E8B94F !important;
+}
+
+/* Dark mode */
+body.dark-theme .calculator-faq-item summary:hover,
+body.dark-theme .calculator-faq-item[open] summary {
+    color: #E8B94F !important;
+}

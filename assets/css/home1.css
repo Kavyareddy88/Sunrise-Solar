@@ -1,0 +1,1688 @@
+.home1-hero .hero-grid {
+    min-height: 610px;
+}
+
+.home1-hero h1 em {
+    font-style: normal;
+    color: var(--primary);
+}
+.btn-arrow {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 6px;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover .btn-arrow {
+    transform: translate(3px, -3px);
+}
+
+/* HERO BUTTON ARROWS */
+.home1-hero .hero-btn-arrow {
+    width: 17px;
+    height: 17px;
+    flex: 0 0 17px;
+    transition: transform 0.3s ease;
+}
+
+.home1-hero .btn:hover .hero-btn-arrow {
+    transform: translateX(4px);
+}
+
+/* SECONDARY BUTTON – GOLD BORDER */
+.home1-hero .btn-outline {
+    border: 1.5px solid var(--secondary) !important;
+}
+
+/* FLOATING IMAGE LABEL ANIMATION */
+.home1-hero .float-card {
+    animation: solarLabelFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes solarLabelFloat {
+    0%, 100% {
+        transform: translateX(12px) translateY(0);
+    }
+    50% {
+        transform: translateX(22px) translateY(-8px);
+    }
+}
+
+/* REDUCE MOTION FOR ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+    .home1-hero .float-card {
+        animation: none;
+        transform: translateX(12px);
+    }
+
+    .home1-hero .hero-btn-arrow {
+        transition: none;
+    }
+}
+
+/* ABOUT US SECTION */
+.about-intro {
+    padding: 90px 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.about-visual {
+    position: relative;
+}
+
+.about-visual > img {
+    width: 100%;
+    height: 440px;
+    display: block;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.about-image-note {
+    position: absolute;
+    right: -20px;
+    bottom: 25px;
+    padding: 18px 22px;
+    background: var(--paper);
+    color: var(--ink);
+    border-radius: 12px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+}
+
+.about-image-note strong,
+.about-image-note span {
+    display: block;
+}
+
+.about-image-note strong {
+    color: var(--primary);
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+
+.about-image-note span {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.about-content .eyebrow {
+    color: var(--primary);
+}
+
+.about-content h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.15;
+    margin: 14px 0 20px;
+    color: var(--ink);
+}
+
+.about-content h2 em {
+    color: var(--secondary);
+    font-style: normal;
+}
+
+.about-content p {
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.about-content .btn {
+    margin-top: 12px;
+}
+
+/* TABLET AND MOBILE */
+@media (max-width: 768px) {
+    .about-intro {
+        padding: 60px 0;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-visual > img {
+        height: 320px;
+    }
+
+    .about-image-note {
+        right: 12px;
+        bottom: 15px;
+    }
+}
+
+/* ==========================================
+   SUNRISE SOLAR – HOMEPAGE DESIGN
+   Primary: #176B4B
+   Secondary: #E8B94F
+========================================== */
+
+:root {
+    --solar-green: #176B4B;
+    --solar-green-dark: #104B36;
+    --solar-gold: #E8B94F;
+}
+
+/* SHARED SECTION STYLES */
+
+.solar-section {
+    padding: 90px 0;
+    overflow: hidden;
+}
+
+.solar-section .container,
+.solar-hero .container {
+    width: min(100% - 48px, 1200px);
+    margin-inline: auto;
+}
+
+.solar-small-heading {
+    display: inline-block;
+    color: var(--solar-green);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.solar-section-heading {
+    max-width: 720px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.solar-section-heading h2,
+.solar-about-content h2,
+.solar-calculator-content h2 {
+    color: var(--ink);
+    font-size: clamp(30px, 4vw, 45px);
+    line-height: 1.2;
+    font-weight: 800;
+    margin: 0 0 18px;
+}
+
+.solar-section-heading h2 span,
+.solar-about-content h2 span,
+.solar-calculator-content h2 span {
+    color: var(--solar-gold);
+}
+
+.solar-section-heading > p,
+.solar-about-content > p,
+.solar-calculator-content > p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.85;
+    margin: 0;
+}
+
+/* BUTTONS */
+
+.solar-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.solar-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 13px 23px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .25s ease,
+                color .25s ease,
+                border-color .25s ease,
+                transform .25s ease;
+}
+
+.solar-btn svg {
+    width: 17px;
+    height: 17px;
+    flex: 0 0 17px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform .25s ease;
+}
+
+.solar-btn:hover svg {
+    transform: translateX(4px);
+}
+
+.solar-btn-primary {
+    background: var(--solar-green);
+    color: #FFFFFF !important;
+    border: 1.5px solid var(--solar-green);
+}
+
+.solar-btn-primary:hover {
+    background: var(--solar-green-dark);
+    border-color: var(--solar-green-dark);
+    color: #FFFFFF !important;
+    transform: translateY(-2px);
+}
+
+.solar-btn-secondary {
+    background: transparent;
+    color: var(--ink) !important;
+    border: 1.5px solid var(--solar-gold);
+}
+
+.solar-btn-secondary:hover {
+    background: var(--solar-gold);
+    color: #172A20 !important;
+    border-color: var(--solar-gold);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   1. HERO
+========================================== */
+
+.solar-hero {
+    min-height: calc(100svh - 94px);
+    display: flex;
+    align-items: center;
+    padding: 35px 0;
+    background: var(--cream);
+}
+
+.solar-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.solar-hero-content {
+    max-width: 570px;
+}
+
+.solar-hero-content h1 {
+    color: var(--ink);
+    font-size: clamp(38px, 4.5vw, 58px);
+    font-weight: 800;
+    line-height: 1.13;
+    letter-spacing: -1.5px;
+    margin: 0 0 22px;
+}
+
+.solar-hero-content h1 span {
+    display: block;
+    color: var(--solar-gold);
+}
+
+.solar-hero-content > p {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.85;
+    max-width: 510px;
+    margin: 0;
+}
+
+.solar-hero-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    margin-top: 30px;
+}
+
+.solar-hero-points span {
+    position: relative;
+    padding-inline-start: 19px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.solar-hero-points span::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: 5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--solar-gold);
+}
+
+.solar-hero-visual {
+    position: relative;
+    min-width: 0;
+}
+
+.solar-hero-visual > img {
+    width: 100%;
+    height: clamp(340px, 48vw, 510px);
+    display: block;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, .12);
+}
+
+.solar-hero-badge {
+    position: absolute;
+    inset-inline-start: -22px;
+    bottom: 28px;
+    max-width: 245px;
+    padding: 18px 22px;
+    background: var(--paper);
+    color: var(--ink);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .14);
+    animation: solarBadgeFloat 4s ease-in-out infinite;
+}
+
+.solar-hero-badge strong,
+.solar-hero-badge span {
+    display: block;
+}
+
+.solar-hero-badge strong {
+    color: var(--solar-green);
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.solar-hero-badge span {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.solar-hero-sun {
+    position: absolute;
+    inset-inline-end: -16px;
+    top: -18px;
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--solar-gold);
+    color: #FFFFFF;
+    font-size: 30px;
+    box-shadow: 0 8px 25px rgba(232, 185, 79, .3);
+    animation: solarSunFloat 5s ease-in-out infinite;
+}
+
+@keyframes solarBadgeFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-9px); }
+}
+
+@keyframes solarSunFloat {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-7px) rotate(12deg); }
+}
+
+/* ==========================================
+   2. ABOUT
+========================================== */
+
+.solar-about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.solar-about-visual {
+    position: relative;
+    min-width: 0;
+}
+
+.solar-about-visual > img {
+    width: 100%;
+    height: 440px;
+    display: block;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.solar-about-stat {
+    position: absolute;
+    inset-inline-end: -20px;
+    bottom: 25px;
+    padding: 18px 22px;
+    background: var(--paper);
+    color: var(--ink);
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .12);
+}
+
+.solar-about-stat strong,
+.solar-about-stat span {
+    display: block;
+}
+
+.solar-about-stat strong {
+    color: var(--solar-green);
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.solar-about-stat span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.solar-about-content h2 {
+    margin-bottom: 20px;
+}
+
+.solar-about-content > p {
+    margin-bottom: 15px;
+}
+
+.solar-about-numbers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 26px 0;
+}
+
+.solar-about-numbers > div {
+    padding-inline-start: 15px;
+    border-inline-start: 3px solid var(--solar-gold);
+}
+
+.solar-about-numbers strong,
+.solar-about-numbers span {
+    display: block;
+}
+
+.solar-about-numbers strong {
+    color: var(--solar-green);
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.solar-about-numbers span {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   3. WHY CHOOSE US
+========================================== */
+
+.solar-why {
+    background: var(--cream);
+}
+
+.solar-why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.solar-feature-card {
+    padding: 28px 23px;
+    background: var(--paper);
+    border: 1px solid rgba(23, 107, 75, .10);
+    border-radius: 12px;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.solar-feature-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+}
+
+.solar-card-icon {
+    width: 54px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 22px;
+    border-radius: 12px;
+    background: rgba(232, 185, 79, .16);
+}
+
+.solar-card-icon svg {
+    width: 27px;
+    height: 27px;
+    fill: none;
+    stroke: var(--solar-green);
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.solar-feature-card h3 {
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.4;
+    margin: 0 0 12px;
+}
+
+.solar-feature-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ==========================================
+   4. SERVICES TIMELINE
+========================================== */
+
+.solar-service-layout {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.solar-service-image {
+    position: relative;
+    min-width: 0;
+}
+
+.solar-service-image > img {
+    display: block;
+    width: 100%;
+    height: 530px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.solar-service-image-note {
+    position: absolute;
+    inset-inline-start: 18px;
+    bottom: 18px;
+    padding: 17px 20px;
+    background: var(--paper);
+    border-radius: 9px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+}
+
+.solar-service-image-note strong,
+.solar-service-image-note span {
+    display: block;
+}
+
+.solar-service-image-note strong {
+    color: var(--solar-green);
+    font-size: 16px;
+}
+
+.solar-service-image-note span {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.solar-service-list {
+    position: relative;
+}
+
+.solar-service-list::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 23px;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background: var(--solar-gold);
+}
+
+.solar-service-item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 15px 0;
+}
+
+.solar-service-number {
+    position: relative;
+    z-index: 1;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border: 2px solid var(--solar-gold);
+    border-radius: 50%;
+    background: var(--paper);
+    color: var(--solar-green);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.solar-service-item h3 {
+    color: var(--ink);
+    font-size: 17px;
+    margin: 2px 0 7px;
+}
+
+.solar-service-item p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ==========================================
+   5. SAVINGS CALCULATOR
+========================================== */
+
+.solar-calculator {
+    background: var(--cream);
+}
+
+.solar-calculator-grid {
+    display: grid;
+    grid-template-columns: 1fr .85fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.solar-calculator-content {
+    max-width: 540px;
+}
+
+.solar-calculator-content h2 {
+    margin-bottom: 20px;
+}
+
+.solar-calculator-note {
+    margin-top: 28px;
+    padding-inline-start: 17px;
+    border-inline-start: 3px solid var(--solar-gold);
+}
+
+.solar-calculator-note strong,
+.solar-calculator-note span {
+    display: block;
+}
+
+.solar-calculator-note strong {
+    color: var(--solar-green);
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.solar-calculator-note span {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.solar-calculator-box {
+    padding: 30px;
+    background: var(--paper);
+    border: 1px solid rgba(23, 107, 75, .12);
+    border-radius: 15px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .06);
+}
+
+.solar-calculator-box label {
+    display: block;
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0 0 9px;
+}
+
+.solar-calculator-box input,
+.solar-calculator-box select {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    margin-bottom: 20px;
+    padding: 12px 14px;
+    border: 1px solid rgba(100, 120, 107, .35);
+    border-radius: 6px;
+    background: var(--cream);
+    color: var(--ink);
+    font: inherit;
+    font-size: 14px;
+}
+
+.solar-calculator-box input:focus,
+.solar-calculator-box select:focus {
+    outline: 2px solid var(--solar-gold);
+    outline-offset: 2px;
+}
+
+.solar-calculator-box .solar-btn {
+    width: 100%;
+}
+
+.solar-calculator-result {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px 15px;
+    margin-top: 22px;
+    padding: 18px;
+    background: rgba(23, 107, 75, .08);
+    border-radius: 8px;
+}
+
+.solar-calculator-result span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.solar-calculator-result strong {
+    color: var(--solar-green);
+    font-size: 22px;
+}
+
+.solar-calculator-box > small {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.6;
+    margin-top: 16px;
+}
+
+/* ==========================================
+   6. GALLERY
+========================================== */
+
+.solar-gallery-heading,
+.solar-blog-heading {
+    max-width: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+    text-align: start;
+}
+
+.solar-gallery-heading > div,
+.solar-blog-heading > div {
+    max-width: 650px;
+}
+
+.solar-gallery-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr 1fr;
+    gap: 18px;
+}
+
+.solar-gallery-item {
+    position: relative;
+    display: block;
+    min-width: 0;
+    height: 310px;
+    overflow: hidden;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+.solar-gallery-item::after {
+    content: "";
+    position: absolute;
+    inset: 35% 0 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, .72));
+}
+
+.solar-gallery-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.solar-gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+.solar-gallery-item > span {
+    position: absolute;
+    z-index: 1;
+    inset-inline-start: 20px;
+    bottom: 20px;
+    color: #FFFFFF;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* ==========================================
+   7. BLOG
+========================================== */
+
+.solar-blog {
+    background: var(--cream);
+}
+
+.solar-blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.solar-blog-card {
+    overflow: hidden;
+    background: var(--paper);
+    border: 1px solid rgba(23, 107, 75, .10);
+    border-radius: 12px;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.solar-blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, .08);
+}
+
+.solar-blog-image {
+    display: block;
+    height: 220px;
+    overflow: hidden;
+}
+
+.solar-blog-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.solar-blog-card:hover .solar-blog-image img {
+    transform: scale(1.05);
+}
+
+.solar-blog-body {
+    padding: 23px;
+}
+
+.solar-blog-body > span {
+    display: inline-block;
+    color: var(--solar-green);
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 11px;
+}
+
+.solar-blog-body h3 {
+    color: var(--ink);
+    font-size: 18px;
+    line-height: 1.45;
+    margin: 0 0 12px;
+}
+
+.solar-blog-body p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.75;
+    margin: 0 0 18px;
+}
+
+.solar-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--solar-green);
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.solar-read-more span {
+    color: var(--solar-gold);
+    font-size: 19px;
+    transition: transform .25s ease;
+}
+
+.solar-read-more:hover span {
+    transform: translateX(4px);
+}
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+body.dark-theme .solar-hero {
+    background: var(--cream);
+}
+
+body.dark-theme .solar-section,
+body.dark-theme .solar-about,
+body.dark-theme .solar-services,
+body.dark-theme .solar-gallery {
+    background: var(--cream);
+}
+
+body.dark-theme .solar-why,
+body.dark-theme .solar-calculator,
+body.dark-theme .solar-blog {
+    background: var(--paper);
+}
+
+body.dark-theme .solar-feature-card,
+body.dark-theme .solar-calculator-box,
+body.dark-theme .solar-blog-card,
+body.dark-theme .solar-about-stat,
+body.dark-theme .solar-hero-badge,
+body.dark-theme .solar-service-image-note {
+    background: var(--paper);
+    border-color: rgba(232, 185, 79, .18);
+}
+
+body.dark-theme .solar-small-heading,
+body.dark-theme .solar-read-more,
+body.dark-theme .solar-about-numbers strong,
+body.dark-theme .solar-service-image-note strong,
+body.dark-theme .solar-calculator-note strong {
+    color: var(--solar-gold);
+}
+
+body.dark-theme .solar-hero-badge strong,
+body.dark-theme .solar-about-stat strong,
+body.dark-theme .solar-service-number,
+body.dark-theme .solar-card-icon svg,
+body.dark-theme .solar-calculator-result strong {
+    color: var(--solar-gold);
+}
+
+body.dark-theme .solar-service-number {
+    background: var(--paper);
+}
+
+body.dark-theme .solar-card-icon {
+    background: rgba(232, 185, 79, .12);
+}
+
+body.dark-theme .solar-calculator-result {
+    background: rgba(232, 185, 79, .10);
+}
+
+body.dark-theme .solar-btn-secondary {
+    color: var(--ink) !important;
+    border-color: var(--solar-gold);
+}
+
+body.dark-theme .solar-btn-secondary:hover {
+    color: #172A20 !important;
+    background: var(--solar-gold);
+}
+
+body.dark-theme .solar-calculator-box input,
+body.dark-theme .solar-calculator-box select {
+    background: var(--cream);
+    color: var(--ink);
+    border-color: rgba(232, 185, 79, .35);
+}
+
+/* ==========================================
+   RTL SUPPORT
+========================================== */
+
+[dir="rtl"] .solar-btn svg {
+    transform: rotate(180deg);
+}
+
+[dir="rtl"] .solar-btn:hover svg {
+    transform: rotate(180deg) translateX(4px);
+}
+
+[dir="rtl"] .solar-read-more span {
+    display: inline-block;
+    transform: scaleX(-1);
+}
+
+[dir="rtl"] .solar-read-more:hover span {
+    transform: scaleX(-1) translateX(4px);
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1000px) {
+    .solar-hero {
+        min-height: auto;
+        padding: 55px 0;
+    }
+
+    .solar-hero-grid,
+    .solar-about-grid,
+    .solar-service-layout,
+    .solar-calculator-grid {
+        gap: 35px;
+    }
+
+    .solar-why-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .solar-service-image > img {
+        height: 480px;
+    }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+    .solar-section {
+        padding: 65px 0;
+    }
+
+    .solar-section .container,
+    .solar-hero .container {
+        width: min(100% - 36px, 1200px);
+    }
+
+    .solar-hero {
+        min-height: auto;
+        padding: 45px 0 55px;
+    }
+
+    .solar-hero-grid,
+    .solar-about-grid,
+    .solar-service-layout,
+    .solar-calculator-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .solar-hero-content h1 {
+        font-size: clamp(35px, 9vw, 46px);
+    }
+
+    .solar-hero-content > p {
+        font-size: 14px;
+    }
+
+    .solar-hero-visual > img {
+        height: 330px;
+    }
+
+    .solar-hero-badge {
+        inset-inline-start: 10px;
+        bottom: 15px;
+    }
+
+    .solar-hero-sun {
+        inset-inline-end: 8px;
+    }
+
+    .solar-actions {
+        gap: 10px;
+    }
+
+    .solar-btn {
+        padding: 12px 16px;
+        font-size: 13px;
+    }
+
+    .solar-section-heading {
+        margin-bottom: 32px;
+    }
+
+    .solar-about-visual > img {
+        height: 330px;
+    }
+
+    .solar-about-stat {
+        inset-inline-end: 10px;
+        bottom: 12px;
+    }
+
+    .solar-why-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .solar-service-image > img {
+        height: 340px;
+    }
+
+    .solar-gallery-heading,
+    .solar-blog-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .solar-gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .solar-gallery-large {
+        grid-column: 1 / -1;
+    }
+
+    .solar-gallery-item {
+        height: 220px;
+    }
+
+    .solar-blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .solar-blog-image {
+        height: 230px;
+    }
+
+    .solar-calculator-box {
+        padding: 22px;
+    }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 380px) {
+    .solar-section .container,
+    .solar-hero .container {
+        width: min(100% - 28px, 1200px);
+    }
+
+    .solar-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .solar-actions .solar-btn {
+        width: 100%;
+    }
+
+    .solar-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .solar-gallery-large {
+        grid-column: auto;
+    }
+
+    .solar-about-numbers {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ACCESSIBILITY – REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+    .solar-hero-badge,
+    .solar-hero-sun {
+        animation: none;
+    }
+
+    .solar-btn,
+    .solar-btn svg,
+    .solar-feature-card,
+    .solar-gallery-item img,
+    .solar-blog-card,
+    .solar-blog-image img {
+        transition: none;
+    }
+}
+/* BOTTOM CTA BUTTON */
+.cta-band .cta-inner > a.btn.btn-secondary {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+
+    min-height: 40px !important;
+    padding: 10px 17px !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+
+    border-radius: 6px !important;
+    background: var(--secondary) !important;
+    color: #FFFFFF !important;
+    border: 1.5px solid var(--secondary) !important;
+
+    text-decoration: none !important;
+}
+
+/* CTA ARROW — MATCH HEADER ARROW */
+.cta-band .cta-inner > a.btn.btn-secondary > span {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    font-size: 15px !important;
+    line-height: 1 !important;
+    font-weight: 400 !important;
+
+    transition: transform 0.25s ease !important;
+}
+
+.cta-band .cta-inner > a.btn.btn-secondary:hover > span {
+    transform: translate(3px, -3px);
+}
+
+/* ==========================================
+   HOME 1 – COMMON PAGE ALIGNMENT
+   Match the content boundaries to the header
+========================================== */
+
+/* DESKTOP – CONSISTENT LEFT AND RIGHT GUTTERS */
+
+main {
+    --page-gutter: clamp(28px, 8.2vw, 158px);
+}
+
+/* Apply identical horizontal boundaries to every section */
+
+main .solar-hero > .container,
+main .solar-section > .container {
+    width: calc(100% - (2 * var(--page-gutter))) !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+    padding-inline: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Prevent grid children from pushing outside the container */
+
+.solar-hero-grid,
+.solar-about-grid,
+.solar-service-layout,
+.solar-calculator-grid,
+.solar-why-grid,
+.solar-gallery-grid,
+.solar-blog-grid {
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.solar-hero-grid > *,
+.solar-about-grid > *,
+.solar-service-layout > *,
+.solar-calculator-grid > *,
+.solar-why-grid > *,
+.solar-gallery-grid > *,
+.solar-blog-grid > * {
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* Keep images inside their columns */
+
+.solar-hero-visual,
+.solar-about-visual,
+.solar-service-image,
+.solar-gallery-item,
+.solar-blog-card {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.solar-hero-visual img,
+.solar-about-visual img,
+.solar-service-image img,
+.solar-gallery-item img,
+.solar-blog-image img {
+    max-width: 100%;
+}
+
+/* Keep floating labels inside the image boundaries */
+
+.solar-hero-badge {
+    inset-inline-start: 12px !important;
+    max-width: min(245px, calc(100% - 24px));
+}
+
+.solar-hero-sun {
+    inset-inline-end: 12px !important;
+}
+
+.solar-about-stat {
+    inset-inline-end: 12px !important;
+}
+
+/* Keep section headings and buttons within their layout */
+
+.solar-gallery-heading,
+.solar-blog-heading {
+    min-width: 0;
+    flex-wrap: wrap;
+}
+
+.solar-actions,
+.solar-gallery-heading > *,
+.solar-blog-heading > * {
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* ==========================================
+   TABLET – EQUAL SIDE SPACING
+========================================== */
+
+@media (max-width: 1000px) {
+    main {
+        --page-gutter: 32px;
+    }
+}
+
+/* ==========================================
+   MOBILE – EQUAL SIDE SPACING
+========================================== */
+
+@media (max-width: 700px) {
+    main {
+        --page-gutter: 18px;
+    }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 380px) {
+    main {
+        --page-gutter: 14px;
+    }
+}
+/* BOTTOM CTA – SECONDARY BUTTON STYLE */
+.cta-band .cta-inner > a.btn.btn-secondary {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+
+    min-height: 48px !important;
+    padding: 13px 23px !important;
+
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+
+    border-radius: 6px !important;
+    background: transparent !important;
+    color: var(--ink) !important;
+    border: 1.5px solid var(--secondary) !important;
+
+    text-decoration: none !important;
+}
+
+/* REMOVE OLD DIAGONAL ARROW AND USE A RIGHT ARROW */
+.cta-band .cta-inner > a.btn.btn-secondary > span {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    font-size: 0 !important;
+    line-height: 1 !important;
+}
+
+.cta-band .cta-inner > a.btn.btn-secondary > span::after {
+    content: "→";
+    font-size: 19px !important;
+    line-height: 1 !important;
+    transition: transform 0.25s ease !important;
+}
+
+.cta-band .cta-inner > a.btn.btn-secondary:hover > span::after {
+    transform: translateX(4px);
+}
+
+/* HOVER – SAME AS HERO SECONDARY BUTTON */
+.cta-band .cta-inner > a.btn.btn-secondary:hover {
+    background: var(--secondary) !important;
+    color: #172A20 !important;
+    border-color: var(--secondary) !important;
+}
+
+/* DARK MODE */
+body.dark-theme .cta-band .cta-inner > a.btn.btn-secondary {
+    color: #FFFFFF !important;
+}
+/* ==========================================
+   HOME 1 – CONSISTENT HEADING SIZES
+========================================== */
+
+:root {
+    --solar-heading-size: clamp(30px, 3.5vw, 42px);
+}
+
+/* HERO HEADING */
+.solar-hero-content h1 {
+    font-size: var(--solar-heading-size) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -1px !important;
+}
+
+/* ALL MAIN SECTION HEADINGS */
+.solar-section-heading h2,
+.solar-about-content h2,
+.solar-calculator-content h2 {
+    font-size: var(--solar-heading-size) !important;
+    line-height: 1.2 !important;
+}
+
+/* KEEP HEADING SIZES CONSISTENT ON MOBILE */
+@media (max-width: 700px) {
+    .solar-hero-content h1,
+    .solar-section-heading h2,
+    .solar-about-content h2,
+    .solar-calculator-content h2 {
+        font-size: clamp(28px, 7vw, 34px) !important;
+        line-height: 1.2 !important;
+    }
+}
+
+/* ==========================================
+   HOME 1 – MAKE ALL GALLERY CARDS EQUAL
+========================================== */
+
+.solar-gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 22px;
+}
+
+.solar-gallery-grid .solar-gallery-item {
+    width: 100%;
+    height: 310px;
+    grid-column: auto !important;
+}
+
+.solar-gallery-grid .solar-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    .solar-gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .solar-gallery-grid .solar-gallery-large {
+        grid-column: auto !important;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .solar-gallery-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .solar-gallery-grid .solar-gallery-item {
+        height: 250px;
+    }
+}
+
+/* ==========================================
+   FROM OUR BLOG – READ ARTICLE HOVER EFFECT
+========================================== */
+
+.solar-read-more {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    transition: color .3s ease;
+}
+
+/* Animated gold underline */
+.solar-read-more::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--solar-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s ease;
+}
+
+.solar-read-more:hover::after,
+.solar-read-more:focus-visible::after,
+.solar-read-more:active::after {
+    transform: scaleX(1);
+}
+
+/* Move arrow slightly on hover */
+.solar-read-more span {
+    transition: transform .3s ease;
+}
+
+.solar-read-more:hover span {
+    transform: translateX(5px);
+}
+
+/* Touch / click feedback */
+.solar-read-more:active {
+    color: var(--solar-gold);
+}
+
+.solar-read-more:focus-visible {
+    outline: 2px solid var(--solar-gold);
+    outline-offset: 5px;
+}
+
+/* ==========================================
+   HOME 1 - BLOG & GALLERY IMAGE BORDERS
+   Secondary Colour: #E8B94F
+========================================== */
+
+/* BLOG SECTION IMAGES */
+
+.solar-blog-image {
+    border: 2px solid #E8B94F;
+    box-sizing: border-box;
+}
+
+/* GALLERY SECTION IMAGES */
+
+.solar-gallery-item {
+    border: 2px solid #E8B94F;
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   HOME 1 - FROM OUR BLOG FULL CARD BORDER
+========================================== */
+
+.solar-blog-card {
+    border: 2px solid #E8B94F !important;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: border-color .3s ease,
+                transform .3s ease,
+                box-shadow .3s ease;
+}
+
+.solar-blog-card:hover {
+    border-color: #E8B94F !important;
+}
+
+/* ==========================================
+   HOME 1 - CTA HEADING & BUTTON TEXT COLORS
+========================================== */
+
+/* LIGHT THEME - CTA HEADING */
+.cta-band .cta-inner h2 {
+    color: var(--secondary, #E8B94F) !important;
+}
+
+/* DARK THEME - CTA HEADING */
+body.dark-theme .cta-band .cta-inner h2 {
+    color: #FFFFFF !important;
+}
+
+/* CTA BUTTON - BOTH THEMES */
+.cta-band .cta-inner > a.btn.btn-secondary {
+    color: #FFFFFF !important;
+}
+
+/* CTA BUTTON HOVER - BOTH THEMES */
+.cta-band .cta-inner > a.btn.btn-secondary:hover {
+    color: #FFFFFF !important;
+}
+
+/* CTA BUTTON ARROW - BOTH THEMES */
+.cta-band .cta-inner > a.btn.btn-secondary > span::after {
+    color: #FFFFFF !important;
+}
+
+/* ==========================================
+   WHY CHOOSE US - PREMIUM CARD HOVER
+========================================== */
+
+.solar-why .solar-feature-card {
+    border: 1.5px solid rgba(232, 185, 79, 0.35) !important;
+    transition: all 0.35s ease;
+}
+
+.solar-why .solar-feature-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(232, 185, 79, 0.75) !important;
+    box-shadow: 0 14px 32px rgba(23, 107, 75, 0.12);
+}
+
+/* ICON HOVER */
+
+.solar-why .solar-feature-card i,
+.solar-why .solar-feature-card svg {
+    transition: transform 0.35s ease;
+}
+
+.solar-why .solar-feature-card:hover i,
+.solar-why .solar-feature-card:hover svg {
+    transform: scale(1.12);
+}
+
+/* DARK MODE */
+
+body.dark-theme .solar-why .solar-feature-card {
+    border-color: rgba(232, 185, 79, 0.30) !important;
+}
+
+body.dark-theme .solar-why .solar-feature-card:hover {
+    border-color: rgba(232, 185, 79, 0.65) !important;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.3);
+}

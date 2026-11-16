@@ -1,0 +1,19 @@
+SUNRISE SOLAR — GITHUB & NETLIFY DEPLOYMENT
+
+ZIP STRUCTURE
+- assets/
+- pages/
+- index.html
+- README.md
+
+IMPORTANT
+1. Extract this ZIP.
+2. Upload the CONTENTS of the extracted folder to the ROOT of your GitHub repository.
+   Do not upload an extra enclosing sunrise-solar-website folder.
+3. In Netlify, use the repository root as the Base directory (leave it blank or /).
+4. Leave Build command empty.
+5. Set Publish directory to . (a single dot).
+6. Trigger a new production deployment.
+
+The root index.html redirects visitors to pages/home1.html.
+All original website pages and supplied assets from the uploaded ZIP are retained.

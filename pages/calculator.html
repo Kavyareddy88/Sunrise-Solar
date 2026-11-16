@@ -1,0 +1,920 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#176B4B">
+
+    <title>Solar Savings Calculator | Sunrise Solar</title>
+    <meta name="description" content="Estimate your potential solar savings with the Sunrise Solar savings calculator.">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/calculator.css">
+    <link rel="icon" type="image/png" sizes="64x64" href="../assets/images/logo.jpg">
+</head>
+
+<body dir="ltr">
+
+    <!-- HEADER – SAME STRUCTURE AS HOME 1 -->
+    <header class="site-header">
+
+        <div class="container nav-wrap">
+
+            <!-- Logo -->
+            <a class="brand" href="home1.html">
+
+                <img src="../assets/images/logo.jpg"
+                    alt="Sunrise Solar logo">
+
+                <span>
+                    Sunrise Solar
+                    <small>POWERING A BRIGHTER HOME</small>
+                </span>
+
+            </a>
+
+            <!-- Navigation -->
+            <nav class="nav-links" aria-label="Main navigation">
+
+                <!-- Home Dropdown -->
+                <div class="nav-home active">
+
+                    <a class="nav-home-label" href="home1.html">
+                        Home
+                        <span class="chevron" aria-hidden="true"></span>
+                    </a>
+
+                    <div class="home-dropdown">
+
+                        <a class="selected" href="home1.html">
+                            Home – Classic
+                        </a>
+
+                        <a href="home2.html">
+                            Home – Premium
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <a class="nav-link" href="about.html">About Us</a>
+
+                <a class="nav-link" href="services.html">Services</a>
+
+                <a class="nav-link" href="calculator.html">
+                    Savings Calculator
+                </a>
+
+                <a class="nav-link" href="gallery.html">Gallery</a>
+
+                <a class="nav-link" href="blog.html">Blog</a>
+
+                <a class="nav-link" href="contact.html">Contact</a>
+
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+
+                <button class="icon-btn"
+                    id="rtlToggle"
+                    type="button"
+                    aria-label="Toggle right to left">
+                    RTL
+                </button>
+
+                <button class="icon-btn"
+        id="themeToggle"
+        type="button"
+        aria-label="Toggle dark theme"
+        title="Toggle dark theme">
+
+    <svg class="moon-icon"
+         xmlns="http://www.w3.org/2000/svg"
+         width="19"
+         height="19"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="1.8"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+
+        <path d="M15 3.5
+                 A8.5 8.5 0 1 0 15 20.5
+                 A6.5 8.5 0 0 1 15 3.5Z"/>
+
+    </svg>
+
+</button>
+
+                <a class="btn btn-primary" href="contact.html#contact-form">
+    Book Now
+    <svg class="btn-arrow"
+         xmlns="http://www.w3.org/2000/svg"
+         width="16"
+         height="16"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         aria-hidden="true">
+        <path d="M5 12h14"/>
+        <path d="M13 5l7 7-7 7"/>
+    </svg>
+</a>
+
+            </div>
+
+            <!-- Mobile Menu -->
+            <button class="menu-btn"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+    <main class="calculator-page">
+
+        <!-- SECTION 1: HERO -->
+        <section class="calculator-hero">
+
+            <div class="container calculator-hero-grid">
+
+                <div class="calculator-hero-content">
+
+                   
+
+                    <h1>
+                        Discover Your Solar
+                        <span>Savings Potential.</span>
+                    </h1>
+
+                    <p>
+                        Your electricity bill can tell you a lot about
+                        your solar potential. Get a simple estimate of
+                        how much you could save by making the switch
+                        to clean solar energy.
+                    </p>
+
+                    <div class="calculator-hero-buttons">
+
+                        <a class="btn btn-primary"
+                            href="#savings-tool">
+                            Calculate My Savings
+                            <svg class="btn-arrow" viewBox="0 0 24 24"
+                                width="17" height="17" fill="none"
+                                stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M13 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+
+                        <a class="btn btn-secondary"
+                            href="contact.html#contact-form">
+                            Talk to Our Team
+                            <svg class="btn-arrow" viewBox="0 0 24 24"
+                                width="17" height="17" fill="none"
+                                stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M13 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="calculator-hero-image">
+                    <img src="../assets/images/img4.jpg"
+                        alt="Solar panels installed on a modern home rooftop">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 2: SAVINGS CALCULATOR -->
+        <section class="calculator-tool-section" id="savings-tool">
+
+            <div class="container">
+
+                <div class="calculator-section-heading">
+
+                    <span class="calculator-kicker">
+                        ESTIMATE YOUR SAVINGS
+                    </span>
+
+                    <h2>
+                        Calculate Your
+                        <span>Solar Savings.</span>
+                    </h2>
+
+                    <p>
+                        Enter your monthly electricity bill and choose
+                        an estimated bill offset to see what your
+                        potential savings could look like.
+                    </p>
+
+                </div>
+
+
+                <div class="calculator-tool-grid">
+
+                    <div class="calculator-tool-copy">
+
+                        <h3>A clearer picture of your energy costs.</h3>
+
+                        <p>
+    Solar can help reduce the amount of electricity
+    you need to purchase from the grid. Use this
+    calculator to explore an indicative savings
+    estimate based on your current bill.
+
+    <br><br>
+    Understand how rooftop solar can make a difference
+    to your monthly electricity expenses.
+
+    <br><br>
+    Explore the benefits of clean energy while taking
+    a step towards a more sustainable future.
+</p>
+
+                        <div class="calculator-note">
+
+                            <svg viewBox="0 0 24 24" width="25" height="25"
+                                fill="none" stroke="currentColor"
+                                stroke-width="1.7" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="9"/>
+                                <path d="M12 11v5M12 8h.01"/>
+                            </svg>
+
+                            <p>
+                                This is an initial estimate. A site
+                                assessment helps determine the system
+                                that is suitable for your property.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="calculator-box">
+
+                        <h3>Solar Savings Estimator</h3>
+
+                        <p class="calculator-box-intro">
+                            Enter your electricity details below.
+                        </p>
+
+                        <form id="solarSavingsForm">
+
+                            <div class="calculator-field">
+
+                                <label for="monthlyBill">
+                                    Monthly Electricity Bill
+                                </label>
+
+                                <div class="bill-input-wrap">
+                                    <span class="currency-symbol">₹</span>
+
+                                    <input
+                                        type="number"
+                                        id="monthlyBill"
+                                        name="monthlyBill"
+                                        min="0"
+                                        step="100"
+                                        placeholder="Enter your monthly bill"
+                                        required
+                                    >
+                                </div>
+
+                            </div>
+
+
+                            <div class="calculator-field">
+
+                                <label for="billOffset">
+                                    Estimated Bill Offset
+                                </label>
+
+                                <select id="billOffset" name="billOffset">
+                                    <option value="50">50%</option>
+                                    <option value="65" selected>65%</option>
+                                    <option value="75">75%</option>
+                                </select>
+
+                            </div>
+
+
+                            <button class="btn btn-primary calculator-submit"
+                                type="submit">
+                                Calculate My Savings
+                            </button>
+
+                        </form>
+
+
+                        <div class="calculator-results"
+                            id="calculatorResults"
+                            aria-live="polite"
+                            hidden>
+
+                            <span class="results-label">
+                                YOUR ESTIMATED SAVINGS
+                            </span>
+
+                            <div class="result-item">
+                                <span>Monthly Savings</span>
+                                <strong id="monthlySavings">₹0</strong>
+                            </div>
+
+                            <div class="result-item">
+                                <span>Annual Savings</span>
+                                <strong id="annualSavings">₹0</strong>
+                            </div>
+
+                            <p class="result-disclaimer">
+                                Illustrative estimate only. Actual savings
+                                depend on your tariff, system size, roof
+                                conditions, usage and applicable utility rules.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 3: HOW SAVINGS WORK -->
+        <section class="calculator-how-section">
+
+            <div class="container">
+
+                <div class="calculator-section-heading">
+
+                    <span class="calculator-kicker">
+                        UNDERSTANDING THE ESTIMATE
+                    </span>
+
+                    <h2>
+                        How Your Solar
+                        <span>Savings Add Up.</span>
+                    </h2>
+
+                    <p>
+                        Your solar savings depend on how your system
+                        works with your everyday electricity usage.
+                    </p>
+
+                </div>
+
+
+                <div class="calculator-how-grid">
+
+                    <article class="calculator-info-card">
+
+                        <span class="info-number">01</span>
+
+                        <h3>Your Current Electricity Bill</h3>
+
+                        <p>
+                            Your monthly electricity bill gives us
+                            a starting point for understanding your
+                            household energy expenses.
+                        </p>
+
+                    </article>
+
+
+                    <article class="calculator-info-card">
+
+                        <span class="info-number">02</span>
+
+                        <h3>Your Solar Energy Generation</h3>
+
+                        <p>
+                            A suitable solar installation generates
+                            electricity from sunlight to support
+                            your property's energy requirements.
+                        </p>
+
+                    </article>
+
+
+                    <article class="calculator-info-card">
+
+                        <span class="info-number">03</span>
+
+                        <h3>Your Potential Savings</h3>
+
+                        <p>
+                            The electricity supplied by your solar
+                            system may reduce the energy you need
+                            to purchase from the grid.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 4: BENEFITS -->
+        <section class="calculator-benefits-section">
+
+            <div class="container calculator-benefits-grid">
+
+                <div class="calculator-benefits-image">
+                    <img src="../assets/images/cal2.jpg"
+                        alt="Solar panels helping power a residential home">
+                </div>
+
+                <div class="calculator-benefits-content">
+
+                    <span class="calculator-kicker">
+                        THE VALUE OF GOING SOLAR
+                    </span>
+
+                    <h2>
+                        More Than Just
+                        <span>Lower Bills.</span>
+                    </h2>
+
+                    <p>
+                        A thoughtfully planned solar system can
+                        support your energy needs while helping
+                        you make better use of renewable power.
+                    </p>
+
+                    <div class="calculator-benefit-list">
+
+                        <div class="calculator-benefit-item">
+                            <span class="benefit-check">01</span>
+                            <div>
+                                <h3>Greater Energy Independence</h3>
+                                <p>
+                                    Generate electricity at your own
+                                    property and reduce reliance on
+                                    grid-supplied energy.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="calculator-benefit-item">
+                            <span class="benefit-check">02</span>
+                            <div>
+                                <h3>Long-Term Energy Planning</h3>
+                                <p>
+                                    Explore a solution designed around
+                                    your property's energy requirements.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="calculator-benefit-item">
+                            <span class="benefit-check">03</span>
+                            <div>
+                                <h3>Renewable Energy Choice</h3>
+                                <p>
+                                    Make use of sunlight as a renewable
+                                    source of electricity.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="calculator-benefit-item">
+    <span class="benefit-check">04</span>
+    <div>
+        <h3>Smarter Use of Natural Resources</h3>
+        <p>
+            Harness the power of sunlight to support
+            cleaner electricity generation and reduce
+            dependence on conventional energy sources.
+        </p>
+    </div>
+</div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 5: FACTORS -->
+        <section class="calculator-factors-section">
+
+            <div class="container">
+
+                <div class="calculator-section-heading">
+
+                    <span class="calculator-kicker">
+                        EVERY PROPERTY IS DIFFERENT
+                    </span>
+
+                    <h2>
+                        What Influences Your
+                        <span>Solar Savings?</span>
+                    </h2>
+
+                    <p>
+                        Your final savings estimate depends on more
+                        than just your monthly electricity bill.
+                    </p>
+
+                </div>
+
+
+                <div class="calculator-factors-grid">
+
+                    <article class="factor-card">
+                        <h3>Roof Space and Direction</h3>
+                        <p>
+                            Available roof area, orientation and
+                            shading influence how much solar energy
+                            your panels can generate.
+                        </p>
+                    </article>
+
+                    <article class="factor-card">
+                        <h3>Daily Electricity Usage</h3>
+                        <p>
+                            The time and amount of electricity you
+                            use can affect how much solar energy
+                            is consumed directly.
+                        </p>
+                    </article>
+
+                    <article class="factor-card">
+                        <h3>System Capacity</h3>
+                        <p>
+                            The size and configuration of your solar
+                            system influence its potential generation.
+                        </p>
+                    </article>
+
+                    <article class="factor-card">
+                        <h3>Electricity Tariff and Rules</h3>
+                        <p>
+                            Applicable electricity tariffs, metering
+                            arrangements and utility regulations
+                            can affect your final savings.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FAQ SECTION -->
+        <section class="calculator-faq-section">
+
+            <div class="container">
+
+                <div class="calculator-section-heading">
+
+                    <span class="calculator-kicker">
+                        HAVE QUESTIONS?
+                    </span>
+
+                    <h2>
+                        Frequently Asked
+                        <span>Questions.</span>
+                    </h2>
+
+                    <p>
+                        A few helpful answers before you take
+                        your next step towards solar.
+                    </p>
+
+                </div>
+
+
+                <div class="calculator-faq-list">
+
+                    <details class="calculator-faq-item">
+                        <summary>
+                            How accurate is this solar savings calculator?
+                            <span class="faq-toggle"></span>
+                        </summary>
+                        <p>
+                            It provides an illustrative estimate based
+                            on the monthly bill and selected bill offset.
+                            A detailed assessment is needed to estimate
+                            your actual savings.
+                        </p>
+                    </details>
+
+                    <details class="calculator-faq-item">
+                        <summary>
+                            Why do I need to enter my monthly electricity bill?
+                            <span class="faq-toggle"></span>
+                        </summary>
+                        <p>
+                            Your monthly bill provides a starting point
+                            for estimating your current electricity
+                            expenses and exploring potential savings.
+                        </p>
+                    </details>
+
+                    <details class="calculator-faq-item">
+                        <summary>
+                            Will my actual savings match the estimate?
+                            <span class="faq-toggle"></span>
+                        </summary>
+                        <p>
+                            Not necessarily. Actual savings depend on
+                            your property's solar generation, electricity
+                            usage, tariff, system design and applicable
+                            utility rules.
+                        </p>
+                    </details>
+
+                    <details class="calculator-faq-item">
+                        <summary>
+                            Do I need a rooftop assessment?
+                            <span class="faq-toggle"></span>
+                        </summary>
+                        <p>
+                            Yes. A rooftop assessment helps review
+                            available space, shading, orientation and
+                            other practical factors before a system
+                            is recommended.
+                        </p>
+                    </details>
+
+                    <details class="calculator-faq-item">
+                        <summary>
+                            How can I get a personalised solar estimate?
+                            <span class="faq-toggle"></span>
+                        </summary>
+                        <p>
+                            Contact our team to discuss your electricity
+                            usage and arrange a site assessment for
+                            your property.
+                        </p>
+                    </details>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DISTINCT CTA -->
+<section class="calculator-cta">
+
+    <div class="container calculator-cta-inner">
+
+        <div class="calculator-cta-copy">
+
+            <span class="calculator-cta-label">
+                TAKE THE NEXT STEP
+            </span>
+
+            <h2>
+                Your Solar Journey
+                <span>Starts With a Conversation.</span>
+            </h2>
+
+            <p>
+                Let's understand your energy needs and explore
+                a solar solution that makes sense for your home.
+            </p>
+
+        </div>
+
+        <a class="btn btn-primary" href="contact.html#contact-form">
+            Book Your Free Site Survey
+            <svg class="btn-arrow" viewBox="0 0 24 24"
+                width="17" height="17" fill="none"
+                stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+        </a>
+
+    </div>
+
+</section>
+    </main>
+
+
+    <!-- FOOTER  -->
+   <footer class="footer">
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <!-- Footer Brand -->
+            <div class="footer-brand">
+
+                <a class="brand" href="home1.html">
+                    <img src="../assets/images/logo.jpg" alt="Sunrise Solar logo">
+
+                    <span>
+                        Sunrise Solar
+                        <small>POWERING A BRIGHTER HOME</small>
+                    </span>
+                </a>
+
+                <h3>Powering homes, naturally.</h3>
+
+                <p>
+                    Thoughtful residential solar solutions that
+                    help households use clean energy, lower
+                    electricity costs and feel confident about
+                    every unit they generate.
+                </p>
+
+                <!-- SOCIAL LINKS -->
+                <div class="social-links" aria-label="Social links">
+
+                    <!-- Facebook -->
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14 8h3V4h-3c-3 0-5 2-5 5v2H6v4h3v6h4v-6h3l1-4h-4V9c0-.7.3-1 1-1z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <rect x="3" y="3" width="18" height="18" rx="5"/>
+                            <circle cx="12" cy="12" r="4"/>
+                            <circle class="icon-fill" cx="17.5" cy="6.8" r="1"/>
+                        </svg>
+                    </a>
+
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/919876543210"
+                       aria-label="WhatsApp"
+                       target="_blank"
+                       rel="noopener">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/>
+                            <path d="M9 8.5c.3-.5.6-.5.9-.1l1 1.5c.2.3.1.6-.2.9l-.5.5c.6 1.2 1.5 2.1 2.7 2.7l.5-.5c.3-.3.6-.4.9-.2l1.5 1c.4.3.4.6-.1.9-.6.6-1.4.8-2.2.6-2.7-.7-5.2-3.2-5.9-5.9-.2-.8 0-1.6.6-2.2Z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Message / Email -->
+                    <a href="mailto:hello@sunrisesolar.example"
+                       aria-label="Send us a message">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <rect x="3" y="5" width="18" height="14" rx="2"/>
+                            <path d="m4 7 8 6 8-6"/>
+                        </svg>
+                    </a>
+
+                    <!-- Pinterest -->
+                    <a href="#" aria-label="Pinterest">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 3a9 9 0 0 0-3.3 17.4c-.1-1.2 0-2.5.3-3.7l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.5 1.9-2.5.9 0 1.3.7 1.3 1.5 0 .9-.6 2.3-.9 3.6-.3 1.1.5 2 1.6 2 1.9 0 3.3-2 3.3-4.9 0-2.5-1.8-4.2-4.3-4.2-2.9 0-4.6 2.2-4.6 4.4 0 .9.3 1.9.8 2.4.1.2.2.3.1.5l-.3 1c-.1.3-.2.4-.5.2-1.3-.6-2.1-2.4-2.1-3.9 0-3.2 2.3-6.2 6.7-6.2 3.5 0 6.2 2.5 6.2 5.8 0 3.5-2.2 6.4-5.2 6.4-1 0-2-.5-2.3-1.1l-.7 2.6c-.3 1-.9 2-1.4 2.7A9 9 0 1 0 12 3Z"/>
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
+
+
+            <!-- Explore -->
+            <div class="footer-column">
+
+                <h4>Explore</h4>
+
+                <div class="footer-links">
+                    <a href="home1.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="blog.html">The Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+            </div>
+
+
+            <!-- Our Services -->
+            <div class="footer-column">
+
+                <h4>Our Services</h4>
+
+                <div class="footer-links">
+                    <a href="services.html">Rooftop Installation</a>
+                    <a href="services.html">Maintenance &amp; Care</a>
+                    <a href="services.html">Subsidy Assistance</a>
+                    <a href="calculator.html">Savings Calculator</a>
+                    <a href="home2.html">Home – Premium</a>
+                </div>
+
+            </div>
+
+
+            <!-- Contact -->
+            <div class="footer-column">
+
+                <h4>Come Say Hello</h4>
+
+                <div class="footer-contact">
+
+                    <!-- Location -->
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/>
+                            <circle cx="12" cy="10" r="2.5"/>
+                        </svg>
+
+                        <div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Bengaluru+Karnataka+India"
+                               target="_blank"
+                               rel="noopener">
+                                Find Our Location
+                            </a>
+                            <span>Bengaluru, Karnataka, India</span>
+                        </div>
+                    </div>
+
+                    <!-- Business Hours -->
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="12" cy="12" r="9"/>
+                            <path d="M12 7v5l3 2"/>
+                        </svg>
+
+                        <div>
+                            <strong>Business Hours</strong>
+                            <span>Monday – Saturday · 9 AM – 6 PM</span>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <rect x="3" y="5" width="18" height="14" rx="2"/>
+                            <path d="m4 7 8 6 8-6"/>
+                        </svg>
+
+                        <div>
+                            <a href="mailto:hello@sunrisesolar.example">
+                                Drop Us a Message
+                            </a>
+                            <span>hello@sunrisesolar.example</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Sunrise Solar. All rights reserved.
+            </span>
+
+            <span>
+                <a href="#">Privacy Policy</a>
+                <i></i>
+                <a href="#">Terms &amp; Conditions</a>
+            </span>
+
+        </div>
+
+    </div>
+</footer>
+
+
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/calculator.js" defer></script>
+
+</body>
+</html>

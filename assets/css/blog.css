@@ -1,0 +1,2237 @@
+
+/* =========================================================
+   SUNRISE SOLAR - BLOG PAGE
+   Matches the existing website theme and global components
+========================================================= */
+
+
+/* =========================================================
+   1. BLOG PAGE BASE
+========================================================= */
+
+.solar-blog-page {
+    overflow: hidden;
+    background: var(--paper, #F5F8F4);
+    color: var(--ink, #183027);
+}
+
+.solar-blog-page img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.solar-blog-page a {
+    text-decoration: none;
+}
+
+.solar-blog-page h1,
+.solar-blog-page h2,
+.solar-blog-page h3,
+.solar-blog-page p {
+    margin-top: 0;
+}
+
+.solar-blog-page h1,
+.solar-blog-page h2,
+.solar-blog-page h3 {
+    color: var(--ink, #183027);
+}
+
+.solar-blog-page em {
+    color: var(--primary, #176B4B);
+    font-style: normal;
+}
+
+.journal-eyebrow {
+    display: inline-block;
+    margin-bottom: 17px;
+    color: var(--primary, #176B4B);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1.6;
+}
+
+.solar-blog-page .section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+
+/* =========================================================
+   2. BUTTON CONSISTENCY
+   Uses the website's existing button colours
+========================================================= */
+
+.solar-blog-page .btn {
+    min-height: 50px;
+    padding: 0 23px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    transition: background .25s ease,
+                color .25s ease,
+                border-color .25s ease,
+                transform .25s ease;
+}
+
+.solar-blog-page .btn svg {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+}
+
+.solar-blog-page .btn-primary {
+    background: var(--primary, #176B4B);
+    color: #ffffff;
+    border: 1px solid var(--primary, #176B4B);
+}
+
+.solar-blog-page .btn-primary:hover {
+    background: var(--primary-dark, #104B36);
+    border-color: var(--primary-dark, #104B36);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.solar-blog-page .btn-outline {
+    background: transparent;
+    color: var(--primary, #176B4B);
+    border: 1px solid var(--primary, #176B4B);
+}
+
+.solar-blog-page .btn-outline:hover {
+    background: var(--primary, #176B4B);
+    border-color: var(--primary, #176B4B);
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   3. JOURNAL HERO
+========================================================= */
+
+.journal-hero {
+    position: relative;
+    padding: 75px 0 85px;
+    background: var(--paper, #F5F8F4);
+}
+
+.journal-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 75px;
+}
+
+.journal-hero-visual {
+    position: relative;
+    min-width: 0;
+    padding: 0 28px 28px 0;
+}
+
+.journal-hero-image {
+    height: 490px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #dce8de;
+}
+
+.journal-hero-image img {
+    transition: transform .7s ease;
+}
+
+.journal-hero-visual:hover .journal-hero-image img {
+    transform: scale(1.04);
+}
+
+.journal-image-label {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-height: 67px;
+    padding: 13px 21px;
+    background: var(--primary, #176B4B);
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.journal-image-label strong {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.journal-image-label span {
+    max-width: 170px;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.journal-floating-card {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    max-width: 230px;
+    padding: 19px 22px;
+    background: var(--surface, #ffffff);
+    border: 1px solid var(--border, #E1E9E2);
+    border-radius: 6px;
+    box-shadow: 0 12px 35px rgba(20, 50, 35, .10);
+}
+
+.journal-floating-card span {
+    color: var(--primary, #176B4B);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.journal-floating-card strong {
+    color: var(--ink, #183027);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.journal-hero-content {
+    max-width: 540px;
+}
+
+.journal-hero-content h1 {
+    max-width: 550px;
+    margin-bottom: 23px;
+    font-size: clamp(38px, 4.2vw, 58px);
+    font-weight: 750;
+    line-height: 1.13;
+    letter-spacing: -1.8px;
+}
+
+.journal-hero-content h1 em {
+    color: var(--primary, #176B4B);
+}
+
+.journal-hero-content > p {
+    max-width: 500px;
+    margin-bottom: 30px;
+    color: var(--muted, #68786F);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.journal-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.journal-hero-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 28px;
+    color: var(--muted, #68786F);
+    font-size: 12px;
+}
+
+.journal-hero-note span {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--secondary, #E8B94F);
+}
+
+
+/* =========================================================
+   4. SECTION HEADINGS
+========================================================= */
+
+.journal-section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 35px;
+    margin-bottom: 38px;
+}
+
+.journal-section-heading h2 {
+    margin-bottom: 0;
+    font-size: clamp(30px, 3.2vw, 43px);
+    font-weight: 750;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.journal-section-heading > p {
+    max-width: 390px;
+    margin-bottom: 4px;
+    color: var(--muted, #68786F);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   5. EXPLORE TOPICS
+========================================================= */
+
+.journal-topics {
+    background: var(--surface, #ffffff);
+}
+
+.journal-topic-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.journal-topic-card {
+    position: relative;
+    min-height: 205px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px 23px;
+    overflow: hidden;
+    background: var(--paper, #F5F8F4);
+    border: 1px solid var(--border, #E1E9E2);
+    border-radius: 7px;
+    transition: transform .25s ease,
+                border-color .25s ease,
+                box-shadow .25s ease;
+}
+
+.journal-topic-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary, #176B4B);
+    box-shadow: 0 12px 28px rgba(23, 107, 75, .08);
+}
+
+.journal-topic-number {
+    position: absolute;
+    top: 20px;
+    right: 21px;
+    color: var(--muted, #68786F);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.journal-topic-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 23px;
+    background: rgba(23, 107, 75, .09);
+    border-radius: 6px;
+    color: var(--primary, #176B4B);
+}
+
+.journal-topic-icon svg {
+    width: 23px;
+    height: 23px;
+}
+
+.journal-topic-card > strong {
+    margin-bottom: 7px;
+    color: var(--ink, #183027);
+    font-size: 16px;
+    font-weight: 750;
+}
+
+.journal-topic-card > span:not(.journal-topic-number):not(.journal-topic-icon):not(.journal-arrow-icon) {
+    color: var(--muted, #68786F);
+    font-size: 12px;
+}
+
+.journal-arrow-icon {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface, #ffffff);
+    border: 1px solid var(--border, #E1E9E2);
+    border-radius: 50%;
+    color: var(--primary, #176B4B);
+    transition: background .25s ease, color .25s ease;
+}
+
+.journal-arrow-icon svg {
+    width: 14px;
+    height: 14px;
+}
+
+.journal-topic-card:hover .journal-arrow-icon {
+    background: var(--primary, #176B4B);
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   6. FEATURED ARTICLE
+========================================================= */
+
+.journal-feature {
+    background: var(--paper, #F5F8F4);
+}
+
+.journal-feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 75px;
+}
+
+.journal-feature-image {
+    position: relative;
+    height: 440px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #dce8de;
+}
+
+.journal-feature-image img {
+    transition: transform .6s ease;
+}
+
+.journal-feature-image:hover img {
+    transform: scale(1.04);
+}
+
+.journal-feature-image > span {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    padding: 11px 15px;
+    background: var(--primary, #176B4B);
+    color: #ffffff;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.journal-feature-content h2 {
+    max-width: 540px;
+    margin-bottom: 19px;
+    font-size: clamp(30px, 3.1vw, 42px);
+    font-weight: 750;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.journal-feature-content > p {
+    margin-bottom: 22px;
+    color: var(--muted, #68786F);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.journal-feature-content ul {
+    display: grid;
+    gap: 13px;
+    margin: 0 0 27px;
+    padding: 0;
+    list-style: none;
+}
+
+.journal-feature-content li {
+    position: relative;
+    padding-left: 25px;
+    color: var(--ink, #183027);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.journal-feature-content li::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 9px;
+    height: 9px;
+    background: var(--secondary, #E8B94F);
+    border-radius: 50%;
+}
+
+.journal-text-link,
+.journal-read-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary, #176B4B);
+    font-size: 13px;
+    font-weight: 750;
+    transition: color .2s ease;
+}
+
+.journal-text-link:hover,
+.journal-read-link:hover {
+    color: var(--primary-dark, #104B36);
+}
+
+.journal-link-arrow {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+    transition: transform .2s ease;
+}
+
+.journal-text-link:hover .journal-link-arrow,
+.journal-read-link:hover .journal-link-arrow {
+    transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   7. LATEST ARTICLES
+========================================================= */
+
+.journal-articles {
+    background: var(--surface, #ffffff);
+}
+
+.journal-article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.journal-article-card {
+    min-width: 0;
+    overflow: hidden;
+    background: var(--surface, #ffffff);
+    border: 1px solid var(--border, #E1E9E2);
+    border-radius: 7px;
+    transition: transform .25s ease,
+                box-shadow .25s ease,
+                border-color .25s ease;
+}
+
+.journal-article-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(23, 107, 75, .35);
+    box-shadow: 0 14px 32px rgba(20, 50, 35, .09);
+}
+
+.journal-card-image {
+    position: relative;
+    height: 230px;
+    display: block;
+    overflow: hidden;
+    background: #dce8de;
+}
+
+.journal-card-image img {
+    transition: transform .55s ease;
+}
+
+.journal-article-card:hover .journal-card-image img {
+    transform: scale(1.05);
+}
+
+.journal-card-image > span {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    padding: 9px 12px;
+    background: var(--primary, #176B4B);
+    color: #ffffff;
+    border-radius: 3px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.journal-card-content {
+    padding: 23px 22px 25px;
+}
+
+.journal-card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: var(--muted, #68786F);
+    font-size: 9px;
+    font-weight: 750;
+    letter-spacing: .8px;
+}
+
+.journal-card-meta span:first-child {
+    color: var(--primary, #176B4B);
+}
+
+.journal-card-content h3 {
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 750;
+    line-height: 1.45;
+}
+
+.journal-card-content h3 a {
+    color: var(--ink, #183027);
+    transition: color .2s ease;
+}
+
+.journal-card-content h3 a:hover {
+    color: var(--primary, #176B4B);
+}
+
+.journal-card-content > p {
+    min-height: 67px;
+    margin-bottom: 20px;
+    color: var(--muted, #68786F);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.journal-read-link {
+    padding-top: 15px;
+    border-top: 1px solid var(--border, #E1E9E2);
+    width: 100%;
+}
+
+
+/* =========================================================
+   8. CALL TO ACTION
+========================================================= */
+
+.journal-cta-section {
+    background: var(--paper, #F5F8F4);
+}
+
+.journal-cta-panel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    padding: 55px 60px;
+    overflow: hidden;
+    background: var(--primary-dark, #104B36);
+    border-radius: 8px;
+}
+
+.journal-cta-panel > div {
+    max-width: 620px;
+}
+
+.journal-cta-panel .journal-eyebrow {
+    color: var(--secondary, #E8B94F);
+}
+
+.journal-cta-panel h2 {
+    margin-bottom: 13px;
+    color: #ffffff;
+    font-size: clamp(28px, 3vw, 39px);
+    font-weight: 750;
+    line-height: 1.2;
+}
+
+.journal-cta-panel p {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, .78);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.journal-cta-panel .btn-primary {
+    flex-shrink: 0;
+    background: var(--secondary, #E8B94F);
+    border-color: var(--secondary, #E8B94F);
+    color: #183027;
+}
+
+.journal-cta-panel .btn-primary:hover {
+    background: #f2cb70;
+    border-color: #f2cb70;
+    color: #183027;
+}
+
+
+/* =========================================================
+   9. BLOG REVEAL ANIMATION
+========================================================= */
+
+.journal-reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.journal-reveal.is-hidden {
+    opacity: 0;
+    transform: translateY(22px);
+}
+
+.journal-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .65s ease, transform .65s ease;
+}
+
+
+/* =========================================================
+   10. DARK THEME
+   Uses the existing website dark theme
+========================================================= */
+
+html[data-theme="dark"] .solar-blog-page,
+body.dark-mode .solar-blog-page {
+    background: var(--dark-bg, #101B15);
+    color: var(--dark-text, #EDF4EE);
+}
+
+html[data-theme="dark"] .journal-hero,
+html[data-theme="dark"] .journal-feature,
+html[data-theme="dark"] .journal-cta-section,
+body.dark-mode .journal-hero,
+body.dark-mode .journal-feature,
+body.dark-mode .journal-cta-section {
+    background: var(--dark-bg, #101B15);
+}
+
+html[data-theme="dark"] .journal-topics,
+html[data-theme="dark"] .journal-articles,
+body.dark-mode .journal-topics,
+body.dark-mode .journal-articles {
+    background: var(--dark-surface, #17251D);
+}
+
+html[data-theme="dark"] .solar-blog-page h1,
+html[data-theme="dark"] .solar-blog-page h2,
+html[data-theme="dark"] .solar-blog-page h3,
+html[data-theme="dark"] .journal-topic-card > strong,
+html[data-theme="dark"] .journal-floating-card strong,
+html[data-theme="dark"] .journal-feature-content li,
+html[data-theme="dark"] .journal-card-content h3 a,
+body.dark-mode .solar-blog-page h1,
+body.dark-mode .solar-blog-page h2,
+body.dark-mode .solar-blog-page h3,
+body.dark-mode .journal-topic-card > strong,
+body.dark-mode .journal-floating-card strong,
+body.dark-mode .journal-feature-content li,
+body.dark-mode .journal-card-content h3 a {
+    color: var(--dark-text, #EDF4EE);
+}
+
+html[data-theme="dark"] .solar-blog-page p,
+html[data-theme="dark"] .journal-hero-note,
+html[data-theme="dark"] .journal-topic-card > span:not(.journal-topic-number):not(.journal-topic-icon):not(.journal-arrow-icon),
+html[data-theme="dark"] .journal-card-meta,
+body.dark-mode .solar-blog-page p,
+body.dark-mode .journal-hero-note,
+body.dark-mode .journal-topic-card > span:not(.journal-topic-number):not(.journal-topic-icon):not(.journal-arrow-icon),
+body.dark-mode .journal-card-meta {
+    color: var(--dark-muted, #B0BEB4);
+}
+
+html[data-theme="dark"] .journal-topic-card,
+html[data-theme="dark"] .journal-article-card,
+html[data-theme="dark"] .journal-floating-card,
+body.dark-mode .journal-topic-card,
+body.dark-mode .journal-article-card,
+body.dark-mode .journal-floating-card {
+    background: var(--dark-card, #15231B);
+    border-color: var(--dark-border, #2B3B30);
+}
+
+html[data-theme="dark"] .journal-arrow-icon,
+body.dark-mode .journal-arrow-icon {
+    background: var(--dark-surface, #17251D);
+    border-color: var(--dark-border, #2B3B30);
+}
+
+html[data-theme="dark"] .journal-card-content h3 a:hover,
+body.dark-mode .journal-card-content h3 a:hover {
+    color: var(--secondary, #E8B94F);
+}
+
+html[data-theme="dark"] .journal-card-meta span:first-child,
+html[data-theme="dark"] .journal-eyebrow,
+html[data-theme="dark"] .journal-text-link,
+html[data-theme="dark"] .journal-read-link,
+html[data-theme="dark"] .journal-topic-icon,
+body.dark-mode .journal-card-meta span:first-child,
+body.dark-mode .journal-eyebrow,
+body.dark-mode .journal-text-link,
+body.dark-mode .journal-read-link,
+body.dark-mode .journal-topic-icon {
+    color: var(--secondary, #E8B94F);
+}
+
+html[data-theme="dark"] .journal-topic-icon,
+body.dark-mode .journal-topic-icon {
+    background: rgba(232, 185, 79, .12);
+}
+
+html[data-theme="dark"] .journal-read-link,
+body.dark-mode .journal-read-link {
+    border-color: var(--dark-border, #2B3B30);
+}
+
+html[data-theme="dark"] .journal-feature-image,
+html[data-theme="dark"] .journal-hero-image,
+html[data-theme="dark"] .journal-card-image,
+body.dark-mode .journal-feature-image,
+body.dark-mode .journal-hero-image,
+body.dark-mode .journal-card-image {
+    background: #26382c;
+}
+
+html[data-theme="dark"] .solar-blog-page .btn-outline,
+body.dark-mode .solar-blog-page .btn-outline {
+    color: var(--dark-text, #EDF4EE);
+    border-color: var(--secondary, #E8B94F);
+}
+
+html[data-theme="dark"] .solar-blog-page .btn-outline:hover,
+body.dark-mode .solar-blog-page .btn-outline:hover {
+    background: var(--secondary, #E8B94F);
+    border-color: var(--secondary, #E8B94F);
+    color: #183027;
+}
+
+
+/* =========================================================
+   11. RTL SUPPORT
+========================================================= */
+
+body[dir="rtl"] .journal-hero-visual {
+    padding: 0 0 28px 28px;
+}
+
+body[dir="rtl"] .journal-image-label {
+    left: auto;
+    right: 0;
+}
+
+body[dir="rtl"] .journal-floating-card {
+    right: auto;
+    left: 0;
+}
+
+body[dir="rtl"] .journal-topic-number {
+    right: auto;
+    left: 21px;
+}
+
+body[dir="rtl"] .journal-arrow-icon {
+    right: auto;
+    left: 20px;
+}
+
+body[dir="rtl"] .journal-feature-content li {
+    padding-left: 0;
+    padding-right: 25px;
+}
+
+body[dir="rtl"] .journal-feature-content li::before {
+    left: auto;
+    right: 0;
+}
+
+body[dir="rtl"] .journal-card-image > span,
+body[dir="rtl"] .journal-feature-image > span {
+    left: auto;
+    right: 15px;
+}
+
+body[dir="rtl"] .journal-link-arrow {
+    transform: scaleX(-1);
+}
+
+
+/* =========================================================
+   12. TABLET RESPONSIVE
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .journal-hero-grid,
+    .journal-feature-grid {
+        gap: 40px;
+    }
+
+    .journal-hero-image {
+        height: 410px;
+    }
+
+    .journal-topic-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .journal-article-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .journal-cta-panel {
+        padding: 45px 35px;
+    }
+
+}
+
+
+/* =========================================================
+   13. MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .solar-blog-page .section {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .journal-hero {
+        padding: 45px 0 65px;
+    }
+
+    .journal-hero-grid,
+    .journal-feature-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .journal-hero-visual {
+        padding: 0 15px 20px 0;
+    }
+
+    .journal-hero-image {
+        height: 340px;
+    }
+
+    .journal-floating-card {
+        top: 15px;
+        right: 0;
+        max-width: 195px;
+        padding: 14px 16px;
+    }
+
+    .journal-image-label {
+        min-height: 58px;
+        padding: 10px 15px;
+    }
+
+    .journal-hero-content h1 {
+        font-size: clamp(36px, 9vw, 48px);
+        letter-spacing: -1px;
+    }
+
+    .journal-hero-content > p {
+        font-size: 14px;
+    }
+
+    .journal-section-heading {
+        display: block;
+        margin-bottom: 28px;
+    }
+
+    .journal-section-heading h2 {
+        font-size: 33px;
+    }
+
+    .journal-section-heading > p {
+        margin-top: 15px;
+    }
+
+    .journal-feature-image {
+        height: 330px;
+    }
+
+    .journal-feature-content h2 {
+        font-size: 33px;
+    }
+
+    .journal-article-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .journal-card-image {
+        height: 245px;
+    }
+
+    .journal-card-content > p {
+        min-height: auto;
+    }
+
+    .journal-cta-panel {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 35px 25px;
+        gap: 25px;
+    }
+
+    .journal-cta-panel h2 {
+        font-size: 30px;
+    }
+
+    .journal-hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .journal-hero-buttons .btn {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   14. SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .journal-hero-image {
+        height: 285px;
+    }
+
+    .journal-topic-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .journal-topic-card {
+        min-height: 175px;
+    }
+
+    .journal-hero-content h1 {
+        font-size: 35px;
+    }
+
+    .journal-section-heading h2,
+    .journal-feature-content h2 {
+        font-size: 29px;
+    }
+
+    .journal-card-image {
+        height: 215px;
+    }
+
+    .journal-card-content {
+        padding: 20px 18px;
+    }
+
+    .journal-cta-panel {
+        padding: 30px 20px;
+    }
+
+    .journal-cta-panel .btn {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   15. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .solar-blog-page *,
+    .solar-blog-page *::before,
+    .solar-blog-page *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+
+}
+
+
+/* ================================================
+   BLOG — EXACT ABOUT PAGE HEADING & BUTTON THEME
+================================================ */
+
+/* TWO-TONE HEADINGS */
+
+.solar-blog-page h1,
+.solar-blog-page h2,
+.solar-blog-page h3 {
+    color: #183027;
+}
+
+.solar-blog-page h1 em,
+.solar-blog-page h2 em,
+.solar-blog-page h3 em {
+    color: #E8B94F;
+    font-style: normal;
+}
+
+/* Heading hover — preserve the golden accent */
+
+.solar-blog-page h1 em:hover,
+.solar-blog-page h2 em:hover,
+.solar-blog-page h3 em:hover {
+    color: #D9A52F;
+    transition: color .25s ease;
+}
+
+/* EYEBROW TEXT */
+
+.solar-blog-page .journal-eyebrow {
+    color: #176B4B;
+}
+
+/* PRIMARY BUTTON — GREEN */
+
+.solar-blog-page .btn-primary {
+    background: #176B4B !important;
+    color: #ffffff !important;
+    border: 1px solid #176B4B !important;
+    border-radius: 999px !important;
+}
+
+.solar-blog-page .btn-primary:hover {
+    background: #104B36 !important;
+    border-color: #104B36 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+/* SECONDARY BUTTON — WHITE + GOLD BORDER */
+
+.solar-blog-page .btn-outline {
+    background: transparent !important;
+    color: #183027 !important;
+    border: 1px solid #E8B94F !important;
+    border-radius: 999px !important;
+}
+
+.solar-blog-page .btn-outline:hover {
+    background: #E8B94F !important;
+    border-color: #E8B94F !important;
+    color: #183027 !important;
+    transform: translateY(-2px);
+}
+
+/* SAME BUTTON SHAPE AND DIMENSIONS */
+
+.solar-blog-page .btn {
+    border-radius: 999px !important;
+    padding: 14px 22px;
+    min-height: 48px;
+    font-weight: 800;
+    transition: all .25s ease;
+}
+
+/* BLOG CTA PRIMARY BUTTON */
+
+.solar-blog-page .journal-cta-panel .btn-primary {
+    background: #176B4B !important;
+    color: #ffffff !important;
+    border-color: #176B4B !important;
+}
+
+.solar-blog-page .journal-cta-panel .btn-primary:hover {
+    background: #104B36 !important;
+    border-color: #104B36 !important;
+}
+
+/* DARK MODE */
+
+body.dark-theme .solar-blog-page h1,
+body.dark-theme .solar-blog-page h2,
+body.dark-theme .solar-blog-page h3 {
+    color: #ffffff;
+}
+
+body.dark-theme .solar-blog-page h1 em,
+body.dark-theme .solar-blog-page h2 em,
+body.dark-theme .solar-blog-page h3 em {
+    color: #E8B94F;
+}
+
+body.dark-theme .solar-blog-page .journal-eyebrow {
+    color: #E8B94F;
+}
+
+body.dark-theme .solar-blog-page .btn-primary {
+    background: #176B4B !important;
+    color: #ffffff !important;
+}
+
+body.dark-theme .solar-blog-page .btn-outline {
+    background: transparent !important;
+    color: #E8B94F !important;
+    border-color: #E8B94F !important;
+}
+
+body.dark-theme .solar-blog-page .btn-outline:hover {
+    background: #E8B94F !important;
+    color: #183027 !important;
+}
+
+/* =====================================================
+   BLOG HERO — ALIGN EXACTLY WITH ABOUT US PAGE
+   Preserve the two-column layout and visual balance
+===================================================== */
+
+/* SAME PAGE GUTTERS AS ABOUT US */
+
+.solar-blog-page {
+    --page-gutter: clamp(28px, 8.2vw, 158px);
+}
+
+.solar-blog-page .journal-hero .container {
+    width: calc(100% - (2 * var(--page-gutter)));
+    max-width: none;
+    margin-inline: auto;
+    padding-inline: 0;
+    box-sizing: border-box;
+}
+
+/* SAME HERO HEIGHT AND VERTICAL ALIGNMENT */
+
+.journal-hero {
+    min-height: calc(100vh - 94px);
+    min-height: calc(100svh - 94px);
+
+    display: flex;
+    align-items: center;
+
+    padding: 35px 0;
+    box-sizing: border-box;
+}
+
+/* SAME TWO-COLUMN GRID AS ABOUT US */
+
+.journal-hero-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 55px;
+    min-width: 0;
+}
+
+/* IMAGE ALIGNMENT */
+
+.journal-hero-visual {
+    position: relative;
+    min-width: 0;
+    padding: 0;
+}
+
+.journal-hero-image {
+    width: 100%;
+    height: clamp(350px, 48vw, 510px);
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+/* CONTENT ALIGNMENT */
+
+.journal-hero-content {
+    width: 100%;
+    max-width: 570px;
+    min-width: 0;
+}
+
+.journal-hero-content .journal-eyebrow {
+    margin-bottom: 14px;
+}
+
+.journal-hero-content h1 {
+    max-width: 550px;
+    margin: 0 0 22px;
+
+    font-size: clamp(30px, 3.5vw, 42px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.journal-hero-content > p {
+    max-width: 520px;
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+/* BUTTON POSITION — MATCH ABOUT US */
+
+.journal-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.journal-hero-note {
+    margin-top: 28px;
+}
+
+/* TABLET — SAME SPACING BEHAVIOUR */
+
+@media (max-width: 1000px) {
+
+    .solar-blog-page {
+        --page-gutter: 32px;
+    }
+
+    .journal-hero {
+        min-height: auto;
+        padding: 55px 0;
+    }
+
+    .journal-hero-grid {
+        gap: 35px;
+    }
+
+    .journal-hero-image {
+        height: clamp(350px, 48vw, 480px);
+    }
+}
+
+/* MOBILE — SAME CONTENT ALIGNMENT AS ABOUT US */
+
+@media (max-width: 700px) {
+
+    .solar-blog-page {
+        --page-gutter: 18px;
+    }
+
+    .journal-hero {
+        min-height: auto;
+        padding: 40px 0 50px;
+    }
+
+    .journal-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .journal-hero-content {
+        order: 1;
+    }
+
+    .journal-hero-visual {
+        order: 2;
+    }
+
+    .journal-hero-content h1 {
+        font-size: clamp(28px, 7vw, 34px);
+        line-height: 1.2;
+    }
+
+    .journal-hero-content > p {
+        font-size: 14px;
+    }
+
+    .journal-hero-image {
+        height: 320px;
+    }
+
+    .journal-hero-buttons {
+        gap: 10px;
+    }
+}
+
+/* ==========================================
+   BLOG — EXACT BUTTON SHAPE CONSISTENCY
+   Matches about.css .about-btn
+========================================== */
+
+.solar-blog-page .btn,
+.solar-blog-page a.btn,
+.solar-blog-page button.btn,
+.site-header .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-height: 48px;
+    padding: 13px 23px;
+
+    border-radius: 6px !important;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+
+    box-sizing: border-box;
+    transition:
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+}
+
+/* Primary button */
+
+.solar-blog-page .btn-primary {
+    border: 1.5px solid #176B4B;
+}
+
+.solar-blog-page .btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+/* Secondary button */
+
+.solar-blog-page .btn-outline {
+    border: 1.5px solid #E8B94F;
+}
+
+.solar-blog-page .btn-outline:hover {
+    transform: translateY(-2px);
+}
+
+/* Consistent arrow size */
+
+.solar-blog-page .btn svg {
+    width: 17px;
+    height: 17px;
+    flex: 0 0 17px;
+}
+
+/* Dark mode retains identical shape */
+
+body.dark-theme .solar-blog-page .btn {
+    border-radius: 6px !important;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .solar-blog-page .btn {
+        min-height: 46px;
+        padding: 12px 17px;
+        font-size: 13px;
+    }
+}
+
+/* ==========================================================
+   SUNRISE SOLAR — COMPLETE BLOG DARK MODE FIX
+   Uses the actual body.dark-theme class from main.js
+========================================================== */
+
+/* 1. BLOG DARK THEME VARIABLES */
+
+body.dark-theme .solar-blog-page {
+    --surface: #15231B;
+    --border: #2B3B30;
+
+    background: #17251D !important;
+    color: #EDF4EE !important;
+}
+
+/* 2. ALL MAJOR SECTION BACKGROUNDS */
+
+/* Hero, Featured Article and CTA sections */
+
+body.dark-theme .solar-blog-page .journal-hero,
+body.dark-theme .solar-blog-page .journal-feature,
+body.dark-theme .solar-blog-page .journal-cta-section {
+    background: #17251D !important;
+    color: #EDF4EE !important;
+}
+
+/* Second section — Explore Topics */
+
+body.dark-theme .solar-blog-page .journal-topics {
+    background: #101B15 !important;
+    color: #EDF4EE !important;
+}
+
+/* Fourth section — Latest Articles */
+
+body.dark-theme .solar-blog-page .journal-articles {
+    background: #101B15 !important;
+    color: #EDF4EE !important;
+}
+
+/* 3. SECTION HEADINGS */
+
+body.dark-theme .solar-blog-page h1,
+body.dark-theme .solar-blog-page h2,
+body.dark-theme .solar-blog-page h3 {
+    color: #EDF4EE !important;
+}
+
+/* Golden highlighted heading words */
+
+body.dark-theme .solar-blog-page h1 em,
+body.dark-theme .solar-blog-page h2 em,
+body.dark-theme .solar-blog-page h3 em {
+    color: #E8B94F !important;
+}
+
+/* Heading hover */
+
+body.dark-theme .solar-blog-page h1 em:hover,
+body.dark-theme .solar-blog-page h2 em:hover,
+body.dark-theme .solar-blog-page h3 em:hover {
+    color: #F2CB70 !important;
+}
+
+/* 4. ALL SECTION DESCRIPTIONS */
+
+body.dark-theme .solar-blog-page p,
+body.dark-theme .solar-blog-page .journal-hero-note,
+body.dark-theme .solar-blog-page .journal-section-heading > p,
+body.dark-theme .solar-blog-page .journal-card-meta {
+    color: #B0BEB4 !important;
+}
+
+/* Eyebrow labels */
+
+body.dark-theme .solar-blog-page .journal-eyebrow {
+    color: #E8B94F !important;
+}
+
+/* 5. EXPLORE TOPICS CARDS */
+
+body.dark-theme .solar-blog-page .journal-topic-card {
+    background: #15231B !important;
+    border: 1px solid #2B3B30 !important;
+    color: #EDF4EE !important;
+}
+
+body.dark-theme .solar-blog-page .journal-topic-card:hover {
+    background: #192C21 !important;
+    border-color: #E8B94F !important;
+}
+
+body.dark-theme .solar-blog-page .journal-topic-card > strong {
+    color: #EDF4EE !important;
+}
+
+body.dark-theme .solar-blog-page .journal-topic-card > span:not(
+    .journal-topic-number
+):not(
+    .journal-topic-icon
+):not(
+    .journal-arrow-icon
+) {
+    color: #B0BEB4 !important;
+}
+
+body.dark-theme .solar-blog-page .journal-topic-number {
+    color: #9DADA1 !important;
+}
+
+/* Topic icons */
+
+body.dark-theme .solar-blog-page .journal-topic-icon {
+    background: rgba(232, 185, 79, .12) !important;
+    color: #E8B94F !important;
+}
+
+/* Topic arrow */
+
+body.dark-theme .solar-blog-page .journal-arrow-icon {
+    background: #17251D !important;
+    border-color: #2B3B30 !important;
+    color: #E8B94F !important;
+}
+
+body.dark-theme .solar-blog-page .journal-topic-card:hover .journal-arrow-icon {
+    background: #176B4B !important;
+    border-color: #176B4B !important;
+    color: #FFFFFF !important;
+}
+
+/* 6. FEATURED ARTICLE SECTION */
+
+body.dark-theme .solar-blog-page .journal-feature-content h2 {
+    color: #EDF4EE !important;
+}
+
+body.dark-theme .solar-blog-page .journal-feature-content h2 em {
+    color: #E8B94F !important;
+}
+
+body.dark-theme .solar-blog-page .journal-feature-content > p {
+    color: #B0BEB4 !important;
+}
+
+body.dark-theme .solar-blog-page .journal-feature-content li {
+    color: #EDF4EE !important;
+}
+
+body.dark-theme .solar-blog-page .journal-feature-content li::before {
+    background: #E8B94F !important;
+}
+
+/* 7. ARTICLE CARDS — IMPORTANT FIX */
+
+body.dark-theme .solar-blog-page .journal-article-card {
+    background: #15231B !important;
+    border: 1px solid #2B3B30 !important;
+    color: #EDF4EE !important;
+}
+
+body.dark-theme .solar-blog-page .journal-article-card:hover {
+    background: #192C21 !important;
+    border-color: #E8B94F !important;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, .25);
+}
+
+/* Article card content background */
+
+body.dark-theme .solar-blog-page .journal-card-content {
+    background: #15231B !important;
+}
+
+body.dark-theme .solar-blog-page .journal-card-content h3,
+body.dark-theme .solar-blog-page .journal-card-content h3 a {
+    color: #EDF4EE !important;
+}
+
+body.dark-theme .solar-blog-page .journal-card-content h3 a:hover {
+    color: #E8B94F !important;
+}
+
+body.dark-theme .solar-blog-page .journal-card-content > p {
+    color: #B0BEB4 !important;
+}
+
+/* Article labels and metadata */
+
+body.dark-theme .solar-blog-page .journal-card-meta {
+    color: #A9B8AC !important;
+}
+
+body.dark-theme .solar-blog-page .journal-card-meta span:first-child {
+    color: #E8B94F !important;
+}
+
+/* Read article link */
+
+body.dark-theme .solar-blog-page .journal-read-link {
+    color: #E8B94F !important;
+    border-top-color: #2B3B30 !important;
+}
+
+body.dark-theme .solar-blog-page .journal-read-link:hover {
+    color: #F2CB70 !important;
+}
+
+/* 8. ARTICLE IMAGE BACKGROUNDS */
+
+body.dark-theme .solar-blog-page .journal-hero-image,
+body.dark-theme .solar-blog-page .journal-feature-image,
+body.dark-theme .solar-blog-page .journal-card-image {
+    background: #26382C !important;
+}
+
+/* Floating hero card */
+
+body.dark-theme .solar-blog-page .journal-floating-card {
+    background: #15231B !important;
+    border-color: #2B3B30 !important;
+}
+
+body.dark-theme .solar-blog-page .journal-floating-card strong {
+    color: #EDF4EE !important;
+}
+
+body.dark-theme .solar-blog-page .journal-floating-card span {
+    color: #E8B94F !important;
+}
+
+/* 9. TEXT LINKS */
+
+body.dark-theme .solar-blog-page .journal-text-link {
+    color: #E8B94F !important;
+}
+
+body.dark-theme .solar-blog-page .journal-text-link:hover {
+    color: #F2CB70 !important;
+}
+
+/* 10. CTA PANEL */
+
+body.dark-theme .solar-blog-page .journal-cta-panel {
+    background: #104B36 !important;
+}
+
+body.dark-theme .solar-blog-page .journal-cta-panel h2 {
+    color: #FFFFFF !important;
+}
+
+body.dark-theme .solar-blog-page .journal-cta-panel p {
+    color: rgba(255, 255, 255, .82) !important;
+}
+
+/* Keep primary CTA consistent with other primary buttons */
+
+body.dark-theme .solar-blog-page .journal-cta-panel .btn-primary {
+    background: #176B4B !important;
+    color: #FFFFFF !important;
+    border-color: #176B4B !important;
+}
+
+body.dark-theme .solar-blog-page .journal-cta-panel .btn-primary:hover {
+    background: #104B36 !important;
+    border-color: #E8B94F !important;
+    color: #FFFFFF !important;
+}
+
+/* 11. BUTTON DARK MODE */
+
+body.dark-theme .solar-blog-page .btn-primary {
+    background: #176B4B !important;
+    color: #FFFFFF !important;
+    border-color: #176B4B !important;
+}
+
+body.dark-theme .solar-blog-page .btn-primary:hover {
+    background: #104B36 !important;
+    border-color: #104B36 !important;
+}
+
+body.dark-theme .solar-blog-page .btn-outline {
+    background: transparent !important;
+    color: #E8B94F !important;
+    border-color: #E8B94F !important;
+}
+
+body.dark-theme .solar-blog-page .btn-outline:hover {
+    background: #E8B94F !important;
+    color: #183027 !important;
+    border-color: #E8B94F !important;
+}
+
+/* 12. MOBILE DARK MODE */
+
+@media (max-width: 700px) {
+
+    body.dark-theme .solar-blog-page .journal-topics,
+    body.dark-theme .solar-blog-page .journal-articles {
+        background: #101B15 !important;
+    }
+
+    body.dark-theme .solar-blog-page .journal-topic-card,
+    body.dark-theme .solar-blog-page .journal-article-card {
+        background: #15231B !important;
+    }
+
+}
+
+/* ==========================================
+   BLOG CTA — CORRECT LIGHT & DARK TEXT
+========================================== */
+
+/* CTA background remains secondary yellow */
+
+.solar-blog-page .journal-cta-panel,
+body.dark-theme .solar-blog-page .journal-cta-panel {
+    background: #E8B94F !important;
+}
+
+/* LIGHT MODE — ORIGINAL WEBSITE COLOURS */
+
+.solar-blog-page .journal-cta-panel .journal-eyebrow {
+    color: #176B4B !important;
+}
+
+.solar-blog-page .journal-cta-panel h2 {
+    color: #183027 !important;
+}
+
+.solar-blog-page .journal-cta-panel h2 em {
+    color: #176B4B !important;
+}
+
+.solar-blog-page .journal-cta-panel p {
+    color: #45564B !important;
+}
+
+/* DARK MODE — ALL TEXT WHITE */
+
+body.dark-theme .solar-blog-page .journal-cta-panel .journal-eyebrow,
+body.dark-theme .solar-blog-page .journal-cta-panel h2,
+body.dark-theme .solar-blog-page .journal-cta-panel h2 em,
+body.dark-theme .solar-blog-page .journal-cta-panel p {
+    color: #FFFFFF !important;
+}
+
+/* PRIMARY BUTTON — BOTH THEMES */
+
+.solar-blog-page .journal-cta-panel .btn-primary,
+body.dark-theme .solar-blog-page .journal-cta-panel .btn-primary {
+    background: #176B4B !important;
+    color: #FFFFFF !important;
+    border: 1px solid #176B4B !important;
+}
+
+.solar-blog-page .journal-cta-panel .btn-primary:hover,
+body.dark-theme .solar-blog-page .journal-cta-panel .btn-primary:hover {
+    background: #104B36 !important;
+    color: #FFFFFF !important;
+    border-color: #104B36 !important;
+}
+
+/* =====================================================
+   BLOG HERO — COMPLETE ENTRANCE ANIMATION
+   Image | Image label | Floating card | Text | Buttons
+===================================================== */
+
+/* IMAGE REVEAL */
+
+.journal-hero-visual .journal-hero-image {
+    opacity: 0;
+    transform: translateY(22px) scale(.96);
+    transition:
+        opacity .85s ease,
+        transform .85s cubic-bezier(.2,.7,.2,1);
+}
+
+.journal-hero-visual.journal-visible .journal-hero-image {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* IMAGE LABEL REVEAL */
+
+.journal-image-label {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition:
+        opacity .65s ease .35s,
+        transform .65s ease .35s;
+}
+
+.journal-hero-visual.journal-visible .journal-image-label {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* FLOATING CARD REVEAL */
+
+.journal-floating-card {
+    opacity: 0;
+    transform: translateY(-16px);
+    transition:
+        opacity .7s ease .5s,
+        transform .7s ease .5s;
+}
+
+.journal-hero-visual.journal-visible .journal-floating-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* HERO TEXT — INITIAL STATE */
+
+.journal-hero-content > * {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
+
+/* EYEBROW LABEL */
+
+.journal-hero-content .journal-eyebrow {
+    transition-delay: .15s;
+}
+
+/* MAIN HEADING */
+
+.journal-hero-content h1 {
+    transition-delay: .3s;
+}
+
+/* DESCRIPTION */
+
+.journal-hero-content > p {
+    transition-delay: .45s;
+}
+
+/* BUTTONS */
+
+.journal-hero-content .journal-hero-buttons {
+    transition-delay: .6s;
+}
+
+/* BOTTOM NOTE */
+
+.journal-hero-content .journal-hero-note {
+    transition-delay: .75s;
+}
+
+/* REVEAL TEXT WHEN OBSERVER ACTIVATES */
+
+.journal-hero-content.journal-visible > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* KEEP HERO IMAGE HOVER EFFECT */
+
+.journal-hero-visual:hover .journal-hero-image img {
+    transform: scale(1.04);
+}
+
+/* MOBILE ANIMATION */
+
+@media (max-width: 767px) {
+    .journal-image-label {
+        transform: translateY(14px);
+    }
+
+    .journal-hero-visual.journal-visible .journal-image-label {
+        transform: translateY(0);
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .journal-hero-visual .journal-hero-image,
+    .journal-image-label,
+    .journal-floating-card,
+    .journal-hero-content > * {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* =====================================================
+   SMARTER SOLAR LIVING — NEW BLOG SECTION
+===================================================== */
+
+.journal-energy-section {
+    background: #F5F8F4;
+}
+
+/* HEADING */
+
+.journal-energy-section .journal-section-heading h2 {
+    color: #183027;
+}
+
+.journal-energy-section .journal-section-heading h2 em {
+    color: #E8B94F;
+}
+
+/* CARD GRID */
+
+.journal-energy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+/* CARDS */
+
+.journal-energy-card {
+    position: relative;
+    min-height: 275px;
+    padding: 32px 28px;
+    overflow: hidden;
+
+    background: #FFFFFF;
+    border: 1px solid #E1E9E2;
+    border-radius: 8px;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.journal-energy-card:hover {
+    transform: translateY(-6px);
+    border-color: #176B4B;
+    box-shadow: 0 14px 30px rgba(24, 48, 39, .08);
+}
+
+/* CARD NUMBER */
+
+.journal-energy-number {
+    position: absolute;
+    top: 25px;
+    right: 27px;
+
+    color: #B9C9BF;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* ICON */
+
+.journal-energy-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    background: rgba(23, 107, 75, .09);
+    border-radius: 7px;
+    color: #176B4B;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+}
+
+.journal-energy-icon svg {
+    width: 26px;
+    height: 26px;
+}
+
+.journal-energy-card:hover .journal-energy-icon {
+    background: #176B4B;
+    color: #FFFFFF;
+    transform: translateY(-3px);
+}
+
+/* EYEBROW LABEL */
+
+.journal-energy-label {
+    display: block;
+    margin-bottom: 12px;
+
+    color: #176B4B;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+/* CARD HEADING */
+
+.journal-energy-card h3 {
+    margin-bottom: 13px;
+
+    color: #183027;
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+/* CARD DESCRIPTION */
+
+.journal-energy-card p {
+    margin-bottom: 0;
+
+    color: #68786F;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-theme .journal-energy-section {
+    background: #101B15;
+}
+
+body.dark-theme .journal-energy-section .journal-section-heading h2 {
+    color: #EDF4EE;
+}
+
+body.dark-theme .journal-energy-section .journal-section-heading h2 em {
+    color: #E8B94F;
+}
+
+body.dark-theme .journal-energy-section .journal-section-heading > p {
+    color: #B0BEB4;
+}
+
+body.dark-theme .journal-energy-card {
+    background: #15231B;
+    border-color: #2B3B30;
+}
+
+body.dark-theme .journal-energy-card:hover {
+    background: #192C21;
+    border-color: #E8B94F;
+}
+
+body.dark-theme .journal-energy-number {
+    color: #76887B;
+}
+
+body.dark-theme .journal-energy-icon {
+    background: rgba(232, 185, 79, .12);
+    color: #E8B94F;
+}
+
+body.dark-theme .journal-energy-card:hover .journal-energy-icon {
+    background: #E8B94F;
+    color: #183027;
+}
+
+body.dark-theme .journal-energy-label {
+    color: #E8B94F;
+}
+
+body.dark-theme .journal-energy-card h3 {
+    color: #EDF4EE;
+}
+
+body.dark-theme .journal-energy-card p {
+    color: #B0BEB4;
+}
+
+/* =====================================================
+   ANIMATION — EXISTING BLOG REVEAL SYSTEM
+===================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+
+    .solar-blog-page.journal-animate-ready
+    .journal-energy-section .journal-reveal {
+        opacity: 0;
+        transform: translateY(25px);
+        transition:
+            opacity .7s ease,
+            transform .7s ease;
+    }
+
+    .solar-blog-page.journal-animate-ready
+    .journal-energy-section .journal-reveal.journal-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .journal-energy-card:nth-child(2) {
+        transition-delay: .15s;
+    }
+
+    .journal-energy-card:nth-child(3) {
+        transition-delay: .3s;
+    }
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .journal-energy-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 17px;
+    }
+
+    .journal-energy-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .journal-energy-section {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .journal-energy-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 28px;
+    }
+
+    .journal-energy-card,
+    .journal-energy-card:last-child {
+        grid-column: auto;
+        min-height: auto;
+        padding: 26px 23px;
+    }
+
+    .journal-energy-card h3 {
+        font-size: 18px;
+    }
+
+}
+
+/* ==========================================
+   SMARTER SOLAR LIVING — CENTER ALIGNMENT
+========================================== */
+
+.journal-energy-section .journal-section-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+    margin: 0 auto 42px;
+}
+
+.journal-energy-section .journal-section-heading > div {
+    width: 100%;
+    text-align: center;
+}
+
+.journal-energy-section .journal-eyebrow {
+    text-align: center;
+}
+
+.journal-energy-section .journal-section-heading h2 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.journal-energy-section .journal-section-heading > p {
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Dark mode */
+
+body.dark-theme .journal-energy-section .journal-section-heading {
+    text-align: center;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .journal-energy-section .journal-section-heading {
+        margin-bottom: 30px;
+        gap: 12px;
+    }
+}
